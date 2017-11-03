@@ -1,0 +1,45 @@
+{
+  "name": "mochadoc",
+  "version": "1.0.0",
+  "description": "Mocha/Jasmine tests to API documentation library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mochadoc": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmstead/mochadoc.git"
+  },
+  "keywords": [
+    "mocha",
+    "api",
+    "documentation",
+    "converter",
+    "parser"
+  ],
+  "author": "Chris Stead",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmstead/mochadoc/issues"
+  },
+  "homepage": "https://github.com/cmstead/mochadoc#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chalk": "^2.3.0",
+    "command-line-args": "^4.0.7",
+    "command-line-usage": "^4.0.1",
+    "node-glob": "^1.2.0",
+    "signet": "^6.4.2",
+    "typescript": "^2.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-mocha": "^4.3.1",
+    "mocha": "^4.0.1"
+  }
+}
