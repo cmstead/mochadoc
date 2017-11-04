@@ -3,10 +3,8 @@
 var sep = require('path').sep;
 
 var config = {
-    cwd: __dirname + sep + 'bin',
-    modulePaths: [
-        'modules'
-    ],
+    cwd: __dirname + sep,
+    modulePaths: ['modules'],
     allowOverride: false,
     eagerLoad: false
 };

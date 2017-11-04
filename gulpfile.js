@@ -7,12 +7,11 @@ const mocha = require('gulp-mocha');
 
 const sourceFiles = [
     'bin/**/*.js',
-    'index.js',
-    '!node_modules/**'
+    'index.js'
 ];
 
 const testFiles = [
-    'test/**/*.js'
+    'test/**/*.test.js'
 ];
 
 gulp.task('lint', () => {
@@ -34,5 +33,3 @@ gulp.task('test', ['lint', 'pre-test'], function () {
         .pipe(istanbul.writeReports({ reporters: ['text-summary'] }))
         .pipe(istanbul.enforceThresholds({ thresholds: { global: 80 } }));
 });
-
-gulp.task('test');

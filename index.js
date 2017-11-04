@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const container = require('./container');
+const container = require('./bin/container');
 const configLoader = container.build('configLoader');
 
-configLoader.loadConfig();
+const config = configLoader.loadConfig();
+
+(config);

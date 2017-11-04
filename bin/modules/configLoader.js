@@ -1,8 +1,8 @@
 'use strict';
 
-function configLoader(fileHelper) {
+const signet = require('../signet-types.js');
 
-    const signet = require('./signet-types.js');
+function configLoader(fileHelper) {
 
     const defaultRcFilePath = './.mochadocrc';
     const defaultPackageFilePath = './package.json';

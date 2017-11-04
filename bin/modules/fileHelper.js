@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const signet = require('./signet-types');
+const signet = require('../signet-types');
 
 function fileHelper() {
 
