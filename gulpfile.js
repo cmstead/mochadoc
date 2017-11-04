@@ -21,13 +21,13 @@ gulp.task('lint', () => {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('pre-test', function () {
+gulp.task('istanbul', function () {
     return gulp.src(sourceFiles)
         .pipe(istanbul())
         .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['lint', 'pre-test'], function () {
+gulp.task('test', ['lint', 'istanbul'], function () {
     gulp.src(testFiles, { read: false })
         .pipe(mocha())
         .pipe(istanbul.writeReports({ reporters: ['text-summary'] }))

@@ -2,11 +2,21 @@
 
 const signet = require('signet')();
 
-signet.alias('fileGlob', 'string');
+function isSourceAst(value) {
+    return value.type === 'Program';
+}
+
 signet.alias('filePath', 'string');
+signet.alias('filePaths', 'array<filePath>');
+signet.alias('globPattern', 'string');
+signet.alias('globPatterns', 'array<globPattern>');
+signet.alias('globPatternData', 'variant<globPattern, globPatterns>');
+signet.alias('sourceCode', 'string');
+
+signet.subtype('object')('sourceAst', isSourceAst);
 
 signet.defineDuckType('mochadocConfig', {
-    files: 'variant<fileGlob, array<fileGlob>>',
+    files: 'globPatternData',
     dest: 'filePath'
 });
 

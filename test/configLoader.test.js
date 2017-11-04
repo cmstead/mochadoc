@@ -4,8 +4,6 @@ const assert = require('chai').assert;
 const sinon = require('sinon');
 const container = require('../bin/container');
 
-console.log('Running a test');
-
 describe('configLoader', function () {
 
     let fileResult;
@@ -71,14 +69,20 @@ describe('configLoader', function () {
     it('should throw an error when config is malformed', function() {
         fileResult.result = { foo: 'bar' };
 
-        assert.throws(configLoader.loadConfig);
+        assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
     });
 
     it('should throw an error when config in package.json is missing', function() {
         fileHelperMethods.isFile = (path) => path !== './.mochadocrc';
         fileResult.result = {};
 
-        assert.throws(configLoader.loadConfig);
+        assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
+    });
+
+    it('should throw an error if no configuration file is found', function() {
+        fileHelperMethods.isFile = () => false;
+
+        assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
     });
 
 });

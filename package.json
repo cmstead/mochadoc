@@ -31,9 +31,9 @@
     "command-line-args": "^4.0.7",
     "command-line-usage": "^4.0.1",
     "dject": "^1.5.0",
-    "node-glob": "^1.2.0",
-    "signet": "^6.4.2",
-    "typescript": "^2.6.1"
+    "esprima": "^4.0.0",
+    "glob": "^7.1.2",
+    "signet": "^6.4.2"
   },
   "devDependencies": {
     "chai": "^4.1.2",

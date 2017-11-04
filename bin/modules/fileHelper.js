@@ -6,7 +6,7 @@ const signet = require('../signet-types');
 function fileHelper() {
 
     function isFile(filePath) {
-        try{
+        try {
             return fs.lstatSync(filePath).isFile();
         } catch (e) {
             return false;
@@ -14,7 +14,7 @@ function fileHelper() {
     }
 
     function readFile(filePath) {
-        if(isFile(filePath)) {
+        if (isFile(filePath)) {
             return fs.readFileSync(filePath, 'utf8');
         } else {
             throw new Error(`No file exists at ${filePath}.`);
@@ -24,20 +24,27 @@ function fileHelper() {
     function readJsonFile(filePath) {
         var fileContent = readFile(filePath);
 
-        try{
+        try {
             return JSON.parse(fileContent);
         } catch (e) {
             throw new Error(`File at path ${filePath} does not contain a parseable JSON string.`);
         }
     }
 
+    function readFiles(filePaths) {
+        return filePaths.map(readFile);
+    }
+
     return {
         isFile: signet.enforce(
-            'filePath => boolean', 
+            'filePath => boolean',
             isFile),
         readFile: signet.enforce(
             'filePath => fileContents: string',
             readFile),
+        readFiles: signet.enforce(
+            'filePaths => fileContents: array<string>', 
+            readFiles),
         readJsonFile: signet.enforce(
             'filePath => fileContents: object',
             readJsonFile)
