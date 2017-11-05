@@ -31,7 +31,9 @@
     "command-line-args": "^4.0.7",
     "command-line-usage": "^4.0.1",
     "dject": "^1.5.0",
+    "escope": "^3.6.0",
     "esprima": "^4.0.0",
+    "estraverse": "^4.2.0",
     "glob": "^7.1.2",
     "signet": "^6.4.2"
   },

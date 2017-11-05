@@ -1,0 +1,1531 @@
+[
+    {
+        "filePath": "./test/configLoader.test.js",
+        "sourceAst": {
+            "type": "Program",
+            "body": [
+                {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                        "type": "Literal",
+                        "value": "use strict",
+                        "raw": "'use strict'"
+                    },
+                    "directive": "use strict"
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "assert"
+                            },
+                            "init": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                        "type": "Identifier",
+                                        "name": "require"
+                                    },
+                                    "arguments": [
+                                        {
+                                            "type": "Literal",
+                                            "value": "chai",
+                                            "raw": "'chai'"
+                                        }
+                                    ]
+                                },
+                                "property": {
+                                    "type": "Identifier",
+                                    "name": "assert"
+                                }
+                            }
+                        }
+                    ],
+                    "kind": "const"
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "sinon"
+                            },
+                            "init": {
+                                "type": "CallExpression",
+                                "callee": {
+                                    "type": "Identifier",
+                                    "name": "require"
+                                },
+                                "arguments": [
+                                    {
+                                        "type": "Literal",
+                                        "value": "sinon",
+                                        "raw": "'sinon'"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "kind": "const"
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "container"
+                            },
+                            "init": {
+                                "type": "CallExpression",
+                                "callee": {
+                                    "type": "Identifier",
+                                    "name": "require"
+                                },
+                                "arguments": [
+                                    {
+                                        "type": "Literal",
+                                        "value": "../bin/container",
+                                        "raw": "'../bin/container'"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "kind": "const"
+                },
+                {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                            "type": "Identifier",
+                            "name": "describe"
+                        },
+                        "arguments": [
+                            {
+                                "type": "Literal",
+                                "value": "configLoader",
+                                "raw": "'configLoader'"
+                            },
+                            {
+                                "type": "FunctionExpression",
+                                "id": null,
+                                "params": [],
+                                "body": {
+                                    "type": "BlockStatement",
+                                    "body": [
+                                        {
+                                            "type": "VariableDeclaration",
+                                            "declarations": [
+                                                {
+                                                    "type": "VariableDeclarator",
+                                                    "id": {
+                                                        "type": "Identifier",
+                                                        "name": "fileResult"
+                                                    },
+                                                    "init": null
+                                                }
+                                            ],
+                                            "kind": "let"
+                                        },
+                                        {
+                                            "type": "VariableDeclaration",
+                                            "declarations": [
+                                                {
+                                                    "type": "VariableDeclarator",
+                                                    "id": {
+                                                        "type": "Identifier",
+                                                        "name": "configLoader"
+                                                    },
+                                                    "init": null
+                                                }
+                                            ],
+                                            "kind": "let"
+                                        },
+                                        {
+                                            "type": "VariableDeclaration",
+                                            "declarations": [
+                                                {
+                                                    "type": "VariableDeclarator",
+                                                    "id": {
+                                                        "type": "Identifier",
+                                                        "name": "fileHelperMethods"
+                                                    },
+                                                    "init": null
+                                                }
+                                            ],
+                                            "kind": "let"
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "beforeEach"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "VariableDeclaration",
+                                                                    "declarations": [
+                                                                        {
+                                                                            "type": "VariableDeclarator",
+                                                                            "id": {
+                                                                                "type": "Identifier",
+                                                                                "name": "childContainer"
+                                                                            },
+                                                                            "init": {
+                                                                                "type": "CallExpression",
+                                                                                "callee": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": false,
+                                                                                    "object": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "container"
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "new"
+                                                                                    }
+                                                                                },
+                                                                                "arguments": []
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "kind": "const"
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "Identifier",
+                                                                            "name": "fileResult"
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ObjectExpression",
+                                                                            "properties": [
+                                                                                {
+                                                                                    "type": "Property",
+                                                                                    "key": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "result"
+                                                                                    },
+                                                                                    "computed": false,
+                                                                                    "value": {
+                                                                                        "type": "ObjectExpression",
+                                                                                        "properties": [
+                                                                                            {
+                                                                                                "type": "Property",
+                                                                                                "key": {
+                                                                                                    "type": "Identifier",
+                                                                                                    "name": "files"
+                                                                                                },
+                                                                                                "computed": false,
+                                                                                                "value": {
+                                                                                                    "type": "Literal",
+                                                                                                    "value": "./test/**.test.js",
+                                                                                                    "raw": "'./test/**.test.js'"
+                                                                                                },
+                                                                                                "kind": "init",
+                                                                                                "method": false,
+                                                                                                "shorthand": false
+                                                                                            },
+                                                                                            {
+                                                                                                "type": "Property",
+                                                                                                "key": {
+                                                                                                    "type": "Identifier",
+                                                                                                    "name": "dest"
+                                                                                                },
+                                                                                                "computed": false,
+                                                                                                "value": {
+                                                                                                    "type": "Literal",
+                                                                                                    "value": "./docs/api/",
+                                                                                                    "raw": "'./docs/api/'"
+                                                                                                },
+                                                                                                "kind": "init",
+                                                                                                "method": false,
+                                                                                                "shorthand": false
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    "kind": "init",
+                                                                                    "method": false,
+                                                                                    "shorthand": false
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "Identifier",
+                                                                            "name": "fileHelperMethods"
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ObjectExpression",
+                                                                            "properties": [
+                                                                                {
+                                                                                    "type": "Property",
+                                                                                    "key": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "readJsonFile"
+                                                                                    },
+                                                                                    "computed": false,
+                                                                                    "value": {
+                                                                                        "type": "CallExpression",
+                                                                                        "callee": {
+                                                                                            "type": "MemberExpression",
+                                                                                            "computed": false,
+                                                                                            "object": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "sinon"
+                                                                                            },
+                                                                                            "property": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "spy"
+                                                                                            }
+                                                                                        },
+                                                                                        "arguments": [
+                                                                                            {
+                                                                                                "type": "FunctionExpression",
+                                                                                                "id": null,
+                                                                                                "params": [],
+                                                                                                "body": {
+                                                                                                    "type": "BlockStatement",
+                                                                                                    "body": [
+                                                                                                        {
+                                                                                                            "type": "ReturnStatement",
+                                                                                                            "argument": {
+                                                                                                                "type": "MemberExpression",
+                                                                                                                "computed": false,
+                                                                                                                "object": {
+                                                                                                                    "type": "Identifier",
+                                                                                                                    "name": "fileResult"
+                                                                                                                },
+                                                                                                                "property": {
+                                                                                                                    "type": "Identifier",
+                                                                                                                    "name": "result"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                "generator": false,
+                                                                                                "expression": false,
+                                                                                                "async": false
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    "kind": "init",
+                                                                                    "method": false,
+                                                                                    "shorthand": false
+                                                                                },
+                                                                                {
+                                                                                    "type": "Property",
+                                                                                    "key": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "isFile"
+                                                                                    },
+                                                                                    "computed": false,
+                                                                                    "value": {
+                                                                                        "type": "ArrowFunctionExpression",
+                                                                                        "id": null,
+                                                                                        "params": [],
+                                                                                        "body": {
+                                                                                            "type": "Literal",
+                                                                                            "value": true,
+                                                                                            "raw": "true"
+                                                                                        },
+                                                                                        "generator": false,
+                                                                                        "expression": true,
+                                                                                        "async": false
+                                                                                    },
+                                                                                    "kind": "init",
+                                                                                    "method": false,
+                                                                                    "shorthand": false
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "FunctionDeclaration",
+                                                                    "id": {
+                                                                        "type": "Identifier",
+                                                                        "name": "fileHelper"
+                                                                    },
+                                                                    "params": [],
+                                                                    "body": {
+                                                                        "type": "BlockStatement",
+                                                                        "body": [
+                                                                            {
+                                                                                "type": "ReturnStatement",
+                                                                                "argument": {
+                                                                                    "type": "ObjectExpression",
+                                                                                    "properties": [
+                                                                                        {
+                                                                                            "type": "Property",
+                                                                                            "key": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "isFile"
+                                                                                            },
+                                                                                            "computed": false,
+                                                                                            "value": {
+                                                                                                "type": "ArrowFunctionExpression",
+                                                                                                "id": null,
+                                                                                                "params": [
+                                                                                                    {
+                                                                                                        "type": "Identifier",
+                                                                                                        "name": "path"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "body": {
+                                                                                                    "type": "CallExpression",
+                                                                                                    "callee": {
+                                                                                                        "type": "MemberExpression",
+                                                                                                        "computed": false,
+                                                                                                        "object": {
+                                                                                                            "type": "Identifier",
+                                                                                                            "name": "fileHelperMethods"
+                                                                                                        },
+                                                                                                        "property": {
+                                                                                                            "type": "Identifier",
+                                                                                                            "name": "isFile"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "arguments": [
+                                                                                                        {
+                                                                                                            "type": "Identifier",
+                                                                                                            "name": "path"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                "generator": false,
+                                                                                                "expression": true,
+                                                                                                "async": false
+                                                                                            },
+                                                                                            "kind": "init",
+                                                                                            "method": false,
+                                                                                            "shorthand": false
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Property",
+                                                                                            "key": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "readJsonFile"
+                                                                                            },
+                                                                                            "computed": false,
+                                                                                            "value": {
+                                                                                                "type": "ArrowFunctionExpression",
+                                                                                                "id": null,
+                                                                                                "params": [
+                                                                                                    {
+                                                                                                        "type": "Identifier",
+                                                                                                        "name": "path"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "body": {
+                                                                                                    "type": "CallExpression",
+                                                                                                    "callee": {
+                                                                                                        "type": "MemberExpression",
+                                                                                                        "computed": false,
+                                                                                                        "object": {
+                                                                                                            "type": "Identifier",
+                                                                                                            "name": "fileHelperMethods"
+                                                                                                        },
+                                                                                                        "property": {
+                                                                                                            "type": "Identifier",
+                                                                                                            "name": "readJsonFile"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "arguments": [
+                                                                                                        {
+                                                                                                            "type": "Identifier",
+                                                                                                            "name": "path"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                "generator": false,
+                                                                                                "expression": true,
+                                                                                                "async": false
+                                                                                            },
+                                                                                            "kind": "init",
+                                                                                            "method": false,
+                                                                                            "shorthand": false
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "generator": false,
+                                                                    "expression": false,
+                                                                    "async": false
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "childContainer"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "register"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileHelper"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "Identifier",
+                                                                            "name": "configLoader"
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "CallExpression",
+                                                                            "callee": {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "childContainer"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "build"
+                                                                                }
+                                                                            },
+                                                                            "arguments": [
+                                                                                {
+                                                                                    "type": "Literal",
+                                                                                    "value": "configLoader",
+                                                                                    "raw": "'configLoader'"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "it"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "should load a config file from a user-defined path",
+                                                        "raw": "'should load a config file from a user-defined path'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "VariableDeclaration",
+                                                                    "declarations": [
+                                                                        {
+                                                                            "type": "VariableDeclarator",
+                                                                            "id": {
+                                                                                "type": "Identifier",
+                                                                                "name": "filePath"
+                                                                            },
+                                                                            "init": {
+                                                                                "type": "Literal",
+                                                                                "value": "./test/mochadocConfig.json",
+                                                                                "raw": "'./test/mochadocConfig.json'"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "kind": "const"
+                                                                },
+                                                                {
+                                                                    "type": "VariableDeclaration",
+                                                                    "declarations": [
+                                                                        {
+                                                                            "type": "VariableDeclarator",
+                                                                            "id": {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            },
+                                                                            "init": {
+                                                                                "type": "CallExpression",
+                                                                                "callee": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": false,
+                                                                                    "object": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "configLoader"
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "loadConfig"
+                                                                                    }
+                                                                                },
+                                                                                "arguments": [
+                                                                                    {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "filePath"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "kind": "const"
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "equal"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": true,
+                                                                                "object": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": true,
+                                                                                    "object": {
+                                                                                        "type": "MemberExpression",
+                                                                                        "computed": false,
+                                                                                        "object": {
+                                                                                            "type": "MemberExpression",
+                                                                                            "computed": false,
+                                                                                            "object": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "fileHelperMethods"
+                                                                                            },
+                                                                                            "property": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "readJsonFile"
+                                                                                            }
+                                                                                        },
+                                                                                        "property": {
+                                                                                            "type": "Identifier",
+                                                                                            "name": "args"
+                                                                                        }
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Literal",
+                                                                                        "value": 0,
+                                                                                        "raw": "0"
+                                                                                    }
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Literal",
+                                                                                    "value": 0,
+                                                                                    "raw": "0"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "Identifier",
+                                                                                "name": "filePath"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "equal"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            },
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "fileResult"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "result"
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "it"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "should load a config file from .mochadocrc when no file is specified",
+                                                        "raw": "'should load a config file from .mochadocrc when no file is specified'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "VariableDeclaration",
+                                                                    "declarations": [
+                                                                        {
+                                                                            "type": "VariableDeclarator",
+                                                                            "id": {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            },
+                                                                            "init": {
+                                                                                "type": "CallExpression",
+                                                                                "callee": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": false,
+                                                                                    "object": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "configLoader"
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "loadConfig"
+                                                                                    }
+                                                                                },
+                                                                                "arguments": []
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "kind": "const"
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "equal"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": true,
+                                                                                "object": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": true,
+                                                                                    "object": {
+                                                                                        "type": "MemberExpression",
+                                                                                        "computed": false,
+                                                                                        "object": {
+                                                                                            "type": "MemberExpression",
+                                                                                            "computed": false,
+                                                                                            "object": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "fileHelperMethods"
+                                                                                            },
+                                                                                            "property": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "readJsonFile"
+                                                                                            }
+                                                                                        },
+                                                                                        "property": {
+                                                                                            "type": "Identifier",
+                                                                                            "name": "args"
+                                                                                        }
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Literal",
+                                                                                        "value": 0,
+                                                                                        "raw": "0"
+                                                                                    }
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Literal",
+                                                                                    "value": 0,
+                                                                                    "raw": "0"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "./.mochadocrc",
+                                                                                "raw": "'./.mochadocrc'"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "equal"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            },
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "fileResult"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "result"
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "it"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "should load a config file from package.json when no file is specified and .mochadocrc is missing",
+                                                        "raw": "'should load a config file from package.json when no file is specified and .mochadocrc is missing'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "VariableDeclaration",
+                                                                    "declarations": [
+                                                                        {
+                                                                            "type": "VariableDeclarator",
+                                                                            "id": {
+                                                                                "type": "Identifier",
+                                                                                "name": "configResult"
+                                                                            },
+                                                                            "init": {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "fileResult"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "result"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "kind": "const"
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileHelperMethods"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "isFile"
+                                                                            }
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ArrowFunctionExpression",
+                                                                            "id": null,
+                                                                            "params": [
+                                                                                {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "path"
+                                                                                }
+                                                                            ],
+                                                                            "body": {
+                                                                                "type": "BinaryExpression",
+                                                                                "operator": "!==",
+                                                                                "left": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "path"
+                                                                                },
+                                                                                "right": {
+                                                                                    "type": "Literal",
+                                                                                    "value": "./.mochadocrc",
+                                                                                    "raw": "'./.mochadocrc'"
+                                                                                }
+                                                                            },
+                                                                            "generator": false,
+                                                                            "expression": true,
+                                                                            "async": false
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileResult"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            }
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ObjectExpression",
+                                                                            "properties": [
+                                                                                {
+                                                                                    "type": "Property",
+                                                                                    "key": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "mochadoc"
+                                                                                    },
+                                                                                    "computed": false,
+                                                                                    "value": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "configResult"
+                                                                                    },
+                                                                                    "kind": "init",
+                                                                                    "method": false,
+                                                                                    "shorthand": false
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "VariableDeclaration",
+                                                                    "declarations": [
+                                                                        {
+                                                                            "type": "VariableDeclarator",
+                                                                            "id": {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            },
+                                                                            "init": {
+                                                                                "type": "CallExpression",
+                                                                                "callee": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": false,
+                                                                                    "object": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "configLoader"
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "loadConfig"
+                                                                                    }
+                                                                                },
+                                                                                "arguments": []
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "kind": "const"
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "equal"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": true,
+                                                                                "object": {
+                                                                                    "type": "MemberExpression",
+                                                                                    "computed": true,
+                                                                                    "object": {
+                                                                                        "type": "MemberExpression",
+                                                                                        "computed": false,
+                                                                                        "object": {
+                                                                                            "type": "MemberExpression",
+                                                                                            "computed": false,
+                                                                                            "object": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "fileHelperMethods"
+                                                                                            },
+                                                                                            "property": {
+                                                                                                "type": "Identifier",
+                                                                                                "name": "readJsonFile"
+                                                                                            }
+                                                                                        },
+                                                                                        "property": {
+                                                                                            "type": "Identifier",
+                                                                                            "name": "args"
+                                                                                        }
+                                                                                    },
+                                                                                    "property": {
+                                                                                        "type": "Literal",
+                                                                                        "value": 0,
+                                                                                        "raw": "0"
+                                                                                    }
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Literal",
+                                                                                    "value": 0,
+                                                                                    "raw": "0"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "./package.json",
+                                                                                "raw": "'./package.json'"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "equal"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            },
+                                                                            {
+                                                                                "type": "Identifier",
+                                                                                "name": "configResult"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "it"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "should throw an error when config is malformed",
+                                                        "raw": "'should throw an error when config is malformed'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileResult"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            }
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ObjectExpression",
+                                                                            "properties": [
+                                                                                {
+                                                                                    "type": "Property",
+                                                                                    "key": {
+                                                                                        "type": "Identifier",
+                                                                                        "name": "foo"
+                                                                                    },
+                                                                                    "computed": false,
+                                                                                    "value": {
+                                                                                        "type": "Literal",
+                                                                                        "value": "bar",
+                                                                                        "raw": "'bar'"
+                                                                                    },
+                                                                                    "kind": "init",
+                                                                                    "method": false,
+                                                                                    "shorthand": false
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "throws"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "configLoader"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "loadConfig"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "TemplateLiteral",
+                                                                                "quasis": [
+                                                                                    {
+                                                                                        "type": "TemplateElement",
+                                                                                        "value": {
+                                                                                            "raw": "Cannot find mochadoc configuration or configuration is malformed!",
+                                                                                            "cooked": "Cannot find mochadoc configuration or configuration is malformed!"
+                                                                                        },
+                                                                                        "tail": true
+                                                                                    }
+                                                                                ],
+                                                                                "expressions": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "it"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "should throw an error when config in package.json is missing",
+                                                        "raw": "'should throw an error when config in package.json is missing'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileHelperMethods"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "isFile"
+                                                                            }
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ArrowFunctionExpression",
+                                                                            "id": null,
+                                                                            "params": [
+                                                                                {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "path"
+                                                                                }
+                                                                            ],
+                                                                            "body": {
+                                                                                "type": "BinaryExpression",
+                                                                                "operator": "!==",
+                                                                                "left": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "path"
+                                                                                },
+                                                                                "right": {
+                                                                                    "type": "Literal",
+                                                                                    "value": "./.mochadocrc",
+                                                                                    "raw": "'./.mochadocrc'"
+                                                                                }
+                                                                            },
+                                                                            "generator": false,
+                                                                            "expression": true,
+                                                                            "async": false
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileResult"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "result"
+                                                                            }
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ObjectExpression",
+                                                                            "properties": []
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "throws"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "configLoader"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "loadConfig"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "TemplateLiteral",
+                                                                                "quasis": [
+                                                                                    {
+                                                                                        "type": "TemplateElement",
+                                                                                        "value": {
+                                                                                            "raw": "Cannot find mochadoc configuration or configuration is malformed!",
+                                                                                            "cooked": "Cannot find mochadoc configuration or configuration is malformed!"
+                                                                                        },
+                                                                                        "tail": true
+                                                                                    }
+                                                                                ],
+                                                                                "expressions": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "it"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "should throw an error if no configuration file is found",
+                                                        "raw": "'should throw an error if no configuration file is found'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "AssignmentExpression",
+                                                                        "operator": "=",
+                                                                        "left": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "fileHelperMethods"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "isFile"
+                                                                            }
+                                                                        },
+                                                                        "right": {
+                                                                            "type": "ArrowFunctionExpression",
+                                                                            "id": null,
+                                                                            "params": [],
+                                                                            "body": {
+                                                                                "type": "Literal",
+                                                                                "value": false,
+                                                                                "raw": "false"
+                                                                            },
+                                                                            "generator": false,
+                                                                            "expression": true,
+                                                                            "async": false
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "MemberExpression",
+                                                                            "computed": false,
+                                                                            "object": {
+                                                                                "type": "Identifier",
+                                                                                "name": "assert"
+                                                                            },
+                                                                            "property": {
+                                                                                "type": "Identifier",
+                                                                                "name": "throws"
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "MemberExpression",
+                                                                                "computed": false,
+                                                                                "object": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "configLoader"
+                                                                                },
+                                                                                "property": {
+                                                                                    "type": "Identifier",
+                                                                                    "name": "loadConfig"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "TemplateLiteral",
+                                                                                "quasis": [
+                                                                                    {
+                                                                                        "type": "TemplateElement",
+                                                                                        "value": {
+                                                                                            "raw": "Cannot find mochadoc configuration or configuration is malformed!",
+                                                                                            "cooked": "Cannot find mochadoc configuration or configuration is malformed!"
+                                                                                        },
+                                                                                        "tail": true
+                                                                                    }
+                                                                                ],
+                                                                                "expressions": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "generator": false,
+                                "expression": false,
+                                "async": false
+                            }
+                        ]
+                    }
+                }
+            ],
+            "sourceType": "script"
+        }
+    }
+]

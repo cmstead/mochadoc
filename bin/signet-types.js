@@ -20,4 +20,9 @@ signet.defineDuckType('mochadocConfig', {
     dest: 'filePath'
 });
 
+signet.defineDuckType('fileAstRecord', {
+    filePath: 'filePath',
+    sourceAst: 'sourceAst'
+});
+
 module.exports = signet;

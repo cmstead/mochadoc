@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+
 const container = require('./bin/container');
 
 const configLoader = container.build('configLoader');
-const fileGlobber = container.build('fileGlobber');
-const fileHelper = container.build('fileHelper');
-const codeParser = container.build('codeParser');
+const astLoader = container.build('astLoader');
+const titlePicker = container.build('titlePicker');
 
 const config = configLoader.loadConfig();
-const filePaths = fileGlobber.globFiles(config.files);
-const fileContents = fileHelper.readFiles(filePaths);
 
-console.log(codeParser.parseAll(fileContents));
+const fileAsts = astLoader.loadFileAsts(config.files);
+
+const testTitles = fileAsts.reduce(titlePicker.pickTitles, []);
+console.log(JSON.stringify(testTitles, null, 4));
