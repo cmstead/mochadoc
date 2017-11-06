@@ -17,15 +17,27 @@ function astLoader(
     function parseFileContents(fileRecord) {
         return {
             filePath: fileRecord.filePath,
+            fileContents: fileRecord.fileContents,
             sourceAst: codeParser.parseCode(fileRecord.fileContents)
         }
+    }
+
+    function splitTestSource(fileRecord) {
+        return {
+            filePath: fileRecord.filePath,
+            fileLines: fileRecord.fileContents.split(/\r?\n/gi),
+            sourceAst: fileRecord.sourceAst
+        };
     }
 
     function loadFileAsts(globPatternData) {
         return fileGlobber
             .globFiles(globPatternData)
-            .map(getFileAndPath)
-            .map(parseFileContents);
+            .map(function (filePath) {
+                return splitTestSource(
+                    parseFileContents(
+                        getFileAndPath(filePath)));
+            });
     }
 
     return {

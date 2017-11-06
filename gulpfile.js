@@ -11,7 +11,8 @@ const sourceFiles = [
 ];
 
 const testFiles = [
-    'test/**/*.test.js'
+    'test/**/*.test.js',
+    '!test/fixtures/**/*.js'
 ];
 
 gulp.task('lint', () => {

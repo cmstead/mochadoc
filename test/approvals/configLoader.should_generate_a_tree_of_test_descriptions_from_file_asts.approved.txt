@@ -1,0 +1,70 @@
+[
+    {
+        "children": [
+            {
+                "description": "TestFixture",
+                "file": "./test/fixtures/testFixture.test.js",
+                "methodType": "describe",
+                "children": [
+                    {
+                        "description": "function 1",
+                        "file": "./test/fixtures/testFixture.test.js",
+                        "methodType": "describe",
+                        "children": [
+                            {
+                                "description": "should have a test",
+                                "file": "./test/fixtures/testFixture.test.js",
+                                "methodType": "it"
+                            },
+                            {
+                                "description": "should have another test",
+                                "file": "./test/fixtures/testFixture.test.js",
+                                "methodType": "it"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "function 2",
+                        "file": "./test/fixtures/testFixture.test.js",
+                        "methodType": "describe",
+                        "children": [
+                            {
+                                "description": "should have a different test",
+                                "file": "./test/fixtures/testFixture.test.js",
+                                "methodType": "it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "children": [
+            {
+                "description": "TestFixture",
+                "file": "./test/fixtures/testFixture1.test.js",
+                "methodType": "describe",
+                "children": [
+                    {
+                        "description": "function 3",
+                        "file": "./test/fixtures/testFixture1.test.js",
+                        "methodType": "describe",
+                        "children": [
+                            {
+                                "description": "should have a test",
+                                "file": "./test/fixtures/testFixture1.test.js",
+                                "methodType": "it"
+                            },
+                            {
+                                "description": "should have another test",
+                                "file": "./test/fixtures/testFixture1.test.js",
+                                "methodType": "it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

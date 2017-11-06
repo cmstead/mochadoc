@@ -40,7 +40,7 @@ function titlePicker() {
 
         estraverse.traverse(fileAst.sourceAst, {
             enter: function (node) {
-                if(isOnlyCall(node)) {
+                if (isOnlyCall(node)) {
                     throw new Error('Mochadoc cannot generate output if any tests are marked as "only."');
                 }
 
@@ -73,7 +73,12 @@ function titlePicker() {
         return resultData;
     }
 
+    function pickAllTitles(fileAsts) {
+        return fileAsts.reduce(pickTitles, []);
+    }
+
     return {
+        pickAllTitles: pickAllTitles,
         pickTitles: pickTitles
     };
 }

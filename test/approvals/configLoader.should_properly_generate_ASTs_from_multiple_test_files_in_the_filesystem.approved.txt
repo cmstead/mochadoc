@@ -1,0 +1,357 @@
+[
+    {
+        "filePath": "./test/fixtures/testFixture.test.js",
+        "fileLines": [
+            "describe('TestFixture', function() {",
+            "    ",
+            "    describe('function 1', function() {",
+            "",
+            "        it('should have a test', function() {",
+            "            // this is a test",
+            "        });",
+            "",
+            "        it('should have another test', function() {",
+            "            // this is a second test",
+            "        });",
+            "        ",
+            "    });",
+            "    ",
+            "    describe('function 2', function() {",
+            "        ",
+            "        it('should have a different test', function() {",
+            "            // this is a test for function 2",
+            "        });",
+            "",
+            "    });",
+            "",
+            "});"
+        ],
+        "sourceAst": {
+            "type": "Program",
+            "body": [
+                {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                            "type": "Identifier",
+                            "name": "describe"
+                        },
+                        "arguments": [
+                            {
+                                "type": "Literal",
+                                "value": "TestFixture",
+                                "raw": "'TestFixture'"
+                            },
+                            {
+                                "type": "FunctionExpression",
+                                "id": null,
+                                "params": [],
+                                "body": {
+                                    "type": "BlockStatement",
+                                    "body": [
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "describe"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "function 1",
+                                                        "raw": "'function 1'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "Identifier",
+                                                                            "name": "it"
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "should have a test",
+                                                                                "raw": "'should have a test'"
+                                                                            },
+                                                                            {
+                                                                                "type": "FunctionExpression",
+                                                                                "id": null,
+                                                                                "params": [],
+                                                                                "body": {
+                                                                                    "type": "BlockStatement",
+                                                                                    "body": []
+                                                                                },
+                                                                                "generator": false,
+                                                                                "expression": false,
+                                                                                "async": false
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "Identifier",
+                                                                            "name": "it"
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "should have another test",
+                                                                                "raw": "'should have another test'"
+                                                                            },
+                                                                            {
+                                                                                "type": "FunctionExpression",
+                                                                                "id": null,
+                                                                                "params": [],
+                                                                                "body": {
+                                                                                    "type": "BlockStatement",
+                                                                                    "body": []
+                                                                                },
+                                                                                "generator": false,
+                                                                                "expression": false,
+                                                                                "async": false
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "describe"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "function 2",
+                                                        "raw": "'function 2'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "Identifier",
+                                                                            "name": "it"
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "should have a different test",
+                                                                                "raw": "'should have a different test'"
+                                                                            },
+                                                                            {
+                                                                                "type": "FunctionExpression",
+                                                                                "id": null,
+                                                                                "params": [],
+                                                                                "body": {
+                                                                                    "type": "BlockStatement",
+                                                                                    "body": []
+                                                                                },
+                                                                                "generator": false,
+                                                                                "expression": false,
+                                                                                "async": false
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "generator": false,
+                                "expression": false,
+                                "async": false
+                            }
+                        ]
+                    }
+                }
+            ],
+            "sourceType": "script"
+        }
+    },
+    {
+        "filePath": "./test/fixtures/testFixture1.test.js",
+        "fileLines": [
+            "describe('TestFixture', function() {",
+            "    ",
+            "    describe('function 3', function() {",
+            "",
+            "        it('should have a test', function() {",
+            "            // this is a test",
+            "        });",
+            "",
+            "        it('should have another test', function() {",
+            "            // this is a second test",
+            "        });",
+            "        ",
+            "    });",
+            "    ",
+            "});"
+        ],
+        "sourceAst": {
+            "type": "Program",
+            "body": [
+                {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                            "type": "Identifier",
+                            "name": "describe"
+                        },
+                        "arguments": [
+                            {
+                                "type": "Literal",
+                                "value": "TestFixture",
+                                "raw": "'TestFixture'"
+                            },
+                            {
+                                "type": "FunctionExpression",
+                                "id": null,
+                                "params": [],
+                                "body": {
+                                    "type": "BlockStatement",
+                                    "body": [
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "describe"
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "function 3",
+                                                        "raw": "'function 3'"
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "Identifier",
+                                                                            "name": "it"
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "should have a test",
+                                                                                "raw": "'should have a test'"
+                                                                            },
+                                                                            {
+                                                                                "type": "FunctionExpression",
+                                                                                "id": null,
+                                                                                "params": [],
+                                                                                "body": {
+                                                                                    "type": "BlockStatement",
+                                                                                    "body": []
+                                                                                },
+                                                                                "generator": false,
+                                                                                "expression": false,
+                                                                                "async": false
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "Identifier",
+                                                                            "name": "it"
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "should have another test",
+                                                                                "raw": "'should have another test'"
+                                                                            },
+                                                                            {
+                                                                                "type": "FunctionExpression",
+                                                                                "id": null,
+                                                                                "params": [],
+                                                                                "body": {
+                                                                                    "type": "BlockStatement",
+                                                                                    "body": []
+                                                                                },
+                                                                                "generator": false,
+                                                                                "expression": false,
+                                                                                "async": false
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "generator": false,
+                                "expression": false,
+                                "async": false
+                            }
+                        ]
+                    }
+                }
+            ],
+            "sourceType": "script"
+        }
+    }
+]
