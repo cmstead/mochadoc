@@ -3,7 +3,7 @@
 const estraverse = require('estraverse');
 const signet = require('../signet-types');
 
-function titlePicker() {
+function titlePicker(selectionBuilder) {
 
     const isArray = signet.isTypeOf('array');
 
@@ -33,6 +33,15 @@ function titlePicker() {
             : [];
     }
 
+    function getTestBody(node, fileAst) {
+        const isItBlock = getExpressionName(node) === 'it';
+        const testBodyCoords = node.expression.arguments[1].loc;
+
+        return isItBlock
+            ? selectionBuilder.buildSelection(testBodyCoords, fileAst.fileLines)
+            : '';
+    }
+
     function pickTitles(resultData, fileAst) {
 
         let outputValues = {};
@@ -51,7 +60,8 @@ function titlePicker() {
                         description: node.expression.arguments[0].value,
                         file: fileAst.filePath,
                         methodType: getExpressionName(node),
-                        parent: currentOutputObj
+                        parent: currentOutputObj,
+                        testBody: getTestBody(node, fileAst)
                     }
 
                     currentOutputObj.children.push(childScope);

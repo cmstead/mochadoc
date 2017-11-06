@@ -6,7 +6,7 @@ const signet = require('../signet-types');
 function codeParser() {
 
     function parseCode(source) {
-        return esprima.parse(source);
+        return esprima.parse(source, { loc: true });
     }
 
     function parseAll(sourceStrings) {
