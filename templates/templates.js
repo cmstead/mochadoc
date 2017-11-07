@@ -1,9 +1,11 @@
 var Handlebars = require("handlebars/runtime");  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['core'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper;
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function";
 
-  return "<html>\r\n    <head>\r\n        <title>Mochadoc Test Documentation</title>\r\n    </head>\r\n\r\n    <body>\r\n        "
-    + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+  return "<html>\r\n    <head>\r\n        <title>Mochadoc Test Documentation</title>\r\n    </head>\r\n\r\n    <body>\r\n        <a href=\""
+    + container.escapeExpression(((helper = (helper = helpers.fileRoot || (depth0 != null ? depth0.fileRoot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileRoot","hash":{},"data":data}) : helper)))
+    + "index.html\">&lt; Back to Home</a>\r\n        "
+    + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n    </body>\r\n</html>";
 },"useData":true});
 templates['describeItem'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -14,6 +16,15 @@ templates['describeItem'] = template({"compiler":[7,">= 4.0.0"],"main":function(
     + "</h3>\r\n    <ul>\r\n        "
     + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n    </ul>\r\n</li>";
+},"useData":true});
+templates['describeLink'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function";
+
+  return "<li>\r\n    <h3><a href=\"./details/"
+    + ((stack1 = ((helper = (helper = helpers.fileName || (depth0 != null ? depth0.fileName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileName","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "\">"
+    + container.escapeExpression(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
+    + "</a></h3>\r\n</li>";
 },"useData":true});
 templates['describePage'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function";

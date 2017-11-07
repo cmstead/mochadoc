@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Mochadoc Test Documentation</title>
+    </head>
+
+    <body>
+        <a href="../index.html">&lt; Back to Home</a>
+        <h1>titlePicker</h1>
+
+<p>Tests and Descriptions:</p>
+
+<ul>
+    <li>
+    <h3>pickAllTitles</h3>
+    <ul>
+        <ul>
+    <li>
+        <strong>should generate a tree of test descriptions from file asts</strong>
+    </li>
+    <li>File location: ./test/titlePicker.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const globPattern &#x3D; &#x27;./test/fixtures/*.test.js&#x27;;
+            const asts &#x3D; astLoader.loadFileAsts(globPattern);
+            const titles &#x3D; titlePicker.pickAllTitles(asts);
+
+            this.verify(JSON.stringify(titles, null, 4));
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should throw an error if test files contain an only declaration</strong>
+    </li>
+    <li>File location: ./test/titlePicker.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const globPattern &#x3D; &#x27;./test/fixtures/*.bad.js&#x27;;
+            const asts &#x3D; astLoader.loadFileAsts(globPattern);
+
+            assert.throws(titlePicker.pickAllTitles.bind(null, asts));
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+    </ul>
+</li>
+</ul>
+    </body>
+</html>

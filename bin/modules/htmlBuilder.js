@@ -43,6 +43,14 @@ function htmlBuilder() {
         return templates.describePage(context);
     }
 
+    function descriptionToFileName(description) {
+        const fileNameValue = description
+            .replace(/\s/ig, '-')
+            .replace(/\W/ig, '');
+        
+        return fileNameValue + '.html';
+    }
+
     function buildTitleAsCore(descriptionTree) {
         const treeHasChildren = descriptionTree.children.length > 0;
         const topLevelDescription = treeHasChildren
@@ -54,17 +62,43 @@ function htmlBuilder() {
             : '';
 
         const context = {
-            content: content
+            content: content,
+            fileRoot: '../'
         };
 
         return {
             fileDescription: topLevelDescription,
+            fileName: descriptionToFileName(topLevelDescription),
             fileContent: templates.core(context)
         };
     }
 
+    function htmlObjectToContext(htmlObject) {
+        return {
+            fileName: htmlObject.fileName,
+            description: htmlObject.fileDescription
+        }
+    }
+
+    function buildIndexHtml(htmlObjects) {
+        const content = htmlObjects
+            .map(htmlObjectToContext)
+            .map((fileContext) => templates.describeLink(fileContext))
+            .join('\n');
+        
+        return {
+            fileDescription: '',
+            fileName: 'index.html',
+            fileContent: templates.core({ fileRoot: './', content: '<ul>\n' + content + '\n</ul>' })
+        };
+    }
+
     function buildHtml(titleData) {
-        return titleData.map(buildTitleAsCore);
+        const htmlObjects = titleData.map(buildTitleAsCore);
+
+        htmlObjects.push(buildIndexHtml(htmlObjects));
+
+        return htmlObjects;
     }
 
     return {

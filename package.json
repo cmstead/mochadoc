@@ -37,6 +37,7 @@
     "estraverse": "^4.2.0",
     "glob": "^7.1.2",
     "handlebars": "^4.0.11",
+    "rimraf": "^2.6.2",
     "signet": "^6.4.2"
   },
   "devDependencies": {

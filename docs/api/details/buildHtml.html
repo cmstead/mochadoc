@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Mochadoc Test Documentation</title>
+    </head>
+
+    <body>
+        <a href="../index.html">&lt; Back to Home</a>
+        <h1>htmlBuilder</h1>
+
+<p>Tests and Descriptions:</p>
+
+<ul>
+    <li>
+    <h3>buildHtml</h3>
+    <ul>
+        <ul>
+    <li>
+        <strong>should properly generate an AST from a test file in the filesystem</strong>
+    </li>
+    <li>File location: ./test/htmlBuilder.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const outputHtml &#x3D; htmlBuilder.buildHtml(titleData);
+            this.verify(JSON.stringify(outputHtml, null, 4));
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+    </ul>
+</li>
+</ul>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>Mochadoc Test Documentation</title>
+    </head>
+
+    <body>
+        <a href="../index.html">&lt; Back to Home</a>
+        <h1>configLoader</h1>
+
+<p>Tests and Descriptions:</p>
+
+<ul>
+    <li>
+    <h3>loadConfig</h3>
+    <ul>
+        <ul>
+    <li>
+        <strong>should load a config file from a user-defined path</strong>
+    </li>
+    <li>File location: ./test/configLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const filePath &#x3D; &#x27;./test/mochadocConfig.json&#x27;
+            const result &#x3D; configLoader.loadConfig(filePath, childContainer);
+
+            assert.equal(fileHelperMethods.readJsonFile.args[0][0], filePath);
+            assert.equal(result, fileResult.result);
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should load a config file from .mochadocrc when no file is specified</strong>
+    </li>
+    <li>File location: ./test/configLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const result &#x3D; configLoader.loadConfig(null, childContainer);
+
+            assert.equal(fileHelperMethods.readJsonFile.args[0][0], &#x27;./.mochadocrc&#x27;);
+            assert.equal(result, fileResult.result);
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should load a config file from package.json when no file is specified and .mochadocrc is missing</strong>
+    </li>
+    <li>File location: ./test/configLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const configResult &#x3D; fileResult.result;
+
+            fileHelperMethods.isFile &#x3D; (path) &#x3D;&gt; path !&#x3D;&#x3D; &#x27;./.mochadocrc&#x27;;
+            fileResult.result &#x3D; {
+                mochadoc: configResult
+            };
+
+            const result &#x3D; configLoader.loadConfig(null, childContainer);
+
+            assert.equal(fileHelperMethods.readJsonFile.args[0][0], &#x27;./package.json&#x27;);
+            assert.equal(result, configResult);
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should throw an error when config is malformed</strong>
+    </li>
+    <li>File location: ./test/configLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            fileResult.result &#x3D; { foo: &#x27;bar&#x27; };
+
+            assert.throws(configLoader.loadConfig, &#x60;Cannot find mochadoc configuration or configuration is malformed!&#x60;);
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should throw an error when config in package.json is missing</strong>
+    </li>
+    <li>File location: ./test/configLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            fileHelperMethods.isFile &#x3D; (path) &#x3D;&gt; path !&#x3D;&#x3D; &#x27;./.mochadocrc&#x27;;
+            fileResult.result &#x3D; {};
+
+            assert.throws(configLoader.loadConfig, &#x60;Cannot find mochadoc configuration or configuration is malformed!&#x60;);
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should throw an error if no configuration file is found</strong>
+    </li>
+    <li>File location: ./test/configLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            fileHelperMethods.isFile &#x3D; () &#x3D;&gt; false;
+
+            assert.throws(configLoader.loadConfig, &#x60;Cannot find mochadoc configuration or configuration is malformed!&#x60;);
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+    </ul>
+</li>
+</ul>
+    </body>
+</html>
