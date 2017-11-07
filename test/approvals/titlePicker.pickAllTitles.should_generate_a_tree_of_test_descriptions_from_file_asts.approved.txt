@@ -1,81 +1,115 @@
 [
     {
-        "description": "TestFixture",
-        "file": "./test/fixtures/test-fixture.2.test.js",
-        "methodType": "describe",
-        "testBody": "",
         "children": [
             {
-                "description": "function 3",
+                "description": "TestFixture",
                 "file": "./test/fixtures/test-fixture.2.test.js",
                 "methodType": "describe",
                 "testBody": "",
                 "children": [
                     {
-                        "description": "should have a test",
+                        "description": "function 3",
                         "file": "./test/fixtures/test-fixture.2.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a test\n        }"
+                        "methodType": "describe",
+                        "testBody": "",
+                        "children": [
+                            {
+                                "description": "should have a test",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a test\n        }"
+                            },
+                            {
+                                "description": "should have another test",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a second test\n        }"
+                            }
+                        ]
                     },
                     {
-                        "description": "should have another test",
+                        "description": "function 4",
                         "file": "./test/fixtures/test-fixture.2.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a second test\n        }"
+                        "methodType": "describe",
+                        "testBody": ""
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "children": [
             {
-                "description": "function 1",
+                "description": "TestFixture0",
                 "file": "./test/fixtures/testFixture.0.test.js",
                 "methodType": "describe",
                 "testBody": "",
                 "children": [
                     {
-                        "description": "should have a test",
+                        "description": "function 1",
                         "file": "./test/fixtures/testFixture.0.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a test\n        }"
+                        "methodType": "describe",
+                        "testBody": "",
+                        "children": [
+                            {
+                                "description": "should have a test",
+                                "file": "./test/fixtures/testFixture.0.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a test\n        }"
+                            },
+                            {
+                                "description": "should have another test",
+                                "file": "./test/fixtures/testFixture.0.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a second test\n        }"
+                            }
+                        ]
                     },
                     {
-                        "description": "should have another test",
+                        "description": "function 2",
                         "file": "./test/fixtures/testFixture.0.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a second test\n        }"
+                        "methodType": "describe",
+                        "testBody": "",
+                        "children": [
+                            {
+                                "description": "should have a different test",
+                                "file": "./test/fixtures/testFixture.0.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a test for function 2\n        }"
+                            }
+                        ]
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "children": [
             {
-                "description": "function 2",
-                "file": "./test/fixtures/testFixture.0.test.js",
-                "methodType": "describe",
-                "testBody": "",
-                "children": [
-                    {
-                        "description": "should have a different test",
-                        "file": "./test/fixtures/testFixture.0.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a test for function 2\n        }"
-                    }
-                ]
-            },
-            {
-                "description": "function 3",
+                "description": "TestFixture",
                 "file": "./test/fixtures/testFixture.1.test.js",
                 "methodType": "describe",
                 "testBody": "",
                 "children": [
                     {
-                        "description": "should have a test",
+                        "description": "function 3",
                         "file": "./test/fixtures/testFixture.1.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a test\n        }"
-                    },
-                    {
-                        "description": "should have another test",
-                        "file": "./test/fixtures/testFixture.1.test.js",
-                        "methodType": "it",
-                        "testBody": "function() {\n            // this is a second test\n        }"
+                        "methodType": "describe",
+                        "testBody": "",
+                        "children": [
+                            {
+                                "description": "should have a test",
+                                "file": "./test/fixtures/testFixture.1.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a test\n        }"
+                            },
+                            {
+                                "description": "should have another test",
+                                "file": "./test/fixtures/testFixture.1.test.js",
+                                "methodType": "it",
+                                "testBody": "function() {\n            // this is a second test\n        }"
+                            }
+                        ]
                     }
                 ]
             }

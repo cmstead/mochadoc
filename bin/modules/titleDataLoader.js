@@ -3,12 +3,15 @@
 function titleDataLoader(
     config,
     astLoader,
-    titlePicker) {
+    titlePicker,
+    dataConsolidator) {
 
     function loadTitleData() {
-        return astLoader
+        const titleData = astLoader
             .loadFileAsts(config.files)
             .reduce(titlePicker.pickTitles, []);
+        
+        return dataConsolidator.consolidateDescriptionData(titleData);
     }
 
     return {

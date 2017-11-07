@@ -44,12 +44,21 @@ function htmlBuilder() {
     }
 
     function buildTitleAsCore(descriptionTree) {
+        const treeHasChildren = descriptionTree.children.length > 0;
+        const topLevelDescription = treeHasChildren
+            ? descriptionTree.children[0].description
+            : '';
+        
+        const content = treeHasChildren
+            ? buildPage(descriptionTree)
+            : '';
+
         const context = {
-            content: buildPage(descriptionTree)
+            content: content
         };
 
         return {
-            filePath: descriptionTree.file,
+            fileDescription: topLevelDescription,
             fileContent: templates.core(context)
         };
     }

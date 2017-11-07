@@ -4,8 +4,7 @@ const estraverse = require('estraverse');
 const signet = require('../signet-types');
 
 function titlePicker(
-    selectionBuilder,
-    dataConsolidator) {
+    selectionBuilder) {
 
     const isArray = signet.isTypeOf('array');
 
@@ -92,9 +91,7 @@ function titlePicker(
     }
 
     function pickAllTitles(fileAsts) {
-        const titleData = fileAsts.reduce(pickTitles, []);
-        return dataConsolidator.consolidateDescriptionData(titleData);
-        
+        return fileAsts.reduce(pickTitles, []);
     }
 
     return {

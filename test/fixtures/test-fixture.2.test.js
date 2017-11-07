@@ -11,5 +11,9 @@ describe('TestFixture', function() {
         });
         
     });
+
+    describe('function 4', function() {
+        
+    });
     
 });

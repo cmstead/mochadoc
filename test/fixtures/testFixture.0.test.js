@@ -1,4 +1,4 @@
-describe('TestFixture', function() {
+describe('TestFixture0', function() {
     
     describe('function 1', function() {
 
