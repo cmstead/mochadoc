@@ -3,12 +3,20 @@
 const estraverse = require('estraverse');
 const signet = require('../signet-types');
 
-function titlePicker(selectionBuilder) {
+function titlePicker(
+    selectionBuilder,
+    dataConsolidator) {
 
     const isArray = signet.isTypeOf('array');
 
     function getExpressionName(node) {
-        return node.expression.callee.name;
+        let expressionName = node.expression.callee.name;
+
+        if (typeof expressionName === 'undefined') {
+            expressionName = node.expression.callee.property.name;
+        }
+
+        return expressionName;
     }
 
     function isFunctionCall(node) {
@@ -84,7 +92,9 @@ function titlePicker(selectionBuilder) {
     }
 
     function pickAllTitles(fileAsts) {
-        return fileAsts.reduce(pickTitles, []);
+        const titleData = fileAsts.reduce(pickTitles, []);
+        return dataConsolidator.consolidateDescriptionData(titleData);
+        
     }
 
     return {

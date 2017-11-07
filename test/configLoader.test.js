@@ -9,9 +9,10 @@ describe('configLoader', function () {
     let fileResult;
     let configLoader;
     let fileHelperMethods;
+    let childContainer;
 
     beforeEach(function () {
-        const childContainer = container.new();
+        childContainer = container.new();
 
         fileResult = {
             result: {
@@ -21,11 +22,11 @@ describe('configLoader', function () {
         };
 
         fileHelperMethods = {
-            readJsonFile: sinon.spy(function() { return fileResult.result; }),
+            readJsonFile: sinon.spy(function () { return fileResult.result; }),
             isFile: () => true
         };
 
-        function fileHelper () {
+        function fileHelper() {
             return {
                 isFile: (path) => fileHelperMethods.isFile(path),
                 readJsonFile: (path) => fileHelperMethods.readJsonFile(path)
@@ -37,52 +38,56 @@ describe('configLoader', function () {
         configLoader = childContainer.build('configLoader');
     });
 
-    it('should load a config file from a user-defined path', function () {
-        const filePath = './test/mochadocConfig.json'
-        const result = configLoader.loadConfig(filePath);
+    describe('loadConfig', function () {
 
-        assert.equal(fileHelperMethods.readJsonFile.args[0][0], filePath);
-        assert.equal(result, fileResult.result);
-    });
+        it('should load a config file from a user-defined path', function () {
+            const filePath = './test/mochadocConfig.json'
+            const result = configLoader.loadConfig(filePath, childContainer);
 
-    it('should load a config file from .mochadocrc when no file is specified', function () {
-        const result = configLoader.loadConfig();
+            assert.equal(fileHelperMethods.readJsonFile.args[0][0], filePath);
+            assert.equal(result, fileResult.result);
+        });
 
-        assert.equal(fileHelperMethods.readJsonFile.args[0][0], './.mochadocrc');
-        assert.equal(result, fileResult.result);
-    });
+        it('should load a config file from .mochadocrc when no file is specified', function () {
+            const result = configLoader.loadConfig(null, childContainer);
 
-    it('should load a config file from package.json when no file is specified and .mochadocrc is missing', function () {
-        const configResult = fileResult.result;
+            assert.equal(fileHelperMethods.readJsonFile.args[0][0], './.mochadocrc');
+            assert.equal(result, fileResult.result);
+        });
 
-        fileHelperMethods.isFile = (path) => path !== './.mochadocrc';
-        fileResult.result = {
-            mochadoc: configResult
-        };
+        it('should load a config file from package.json when no file is specified and .mochadocrc is missing', function () {
+            const configResult = fileResult.result;
 
-        const result = configLoader.loadConfig();
+            fileHelperMethods.isFile = (path) => path !== './.mochadocrc';
+            fileResult.result = {
+                mochadoc: configResult
+            };
 
-        assert.equal(fileHelperMethods.readJsonFile.args[0][0], './package.json');
-        assert.equal(result, configResult);
-    });
+            const result = configLoader.loadConfig(null, childContainer);
 
-    it('should throw an error when config is malformed', function() {
-        fileResult.result = { foo: 'bar' };
+            assert.equal(fileHelperMethods.readJsonFile.args[0][0], './package.json');
+            assert.equal(result, configResult);
+        });
 
-        assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
-    });
+        it('should throw an error when config is malformed', function () {
+            fileResult.result = { foo: 'bar' };
 
-    it('should throw an error when config in package.json is missing', function() {
-        fileHelperMethods.isFile = (path) => path !== './.mochadocrc';
-        fileResult.result = {};
+            assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
+        });
 
-        assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
-    });
+        it('should throw an error when config in package.json is missing', function () {
+            fileHelperMethods.isFile = (path) => path !== './.mochadocrc';
+            fileResult.result = {};
 
-    it('should throw an error if no configuration file is found', function() {
-        fileHelperMethods.isFile = () => false;
+            assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
+        });
 
-        assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
+        it('should throw an error if no configuration file is found', function () {
+            fileHelperMethods.isFile = () => false;
+
+            assert.throws(configLoader.loadConfig, `Cannot find mochadoc configuration or configuration is malformed!`);
+        });
+
     });
 
 });

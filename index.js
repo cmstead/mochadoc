@@ -1,15 +1,11 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+
 const container = require('./bin/container');
+container.build('configLoader').loadConfig(null, container);
 
-const configLoader = container.build('configLoader');
-const astLoader = container.build('astLoader');
-const titlePicker = container.build('titlePicker');
+const titleData = container.build('titleDataLoader').loadTitleData();
+const output = container.build('htmlBuilder').buildHtml(titleData);
 
-const config = configLoader.loadConfig();
-
-const fileAsts = astLoader.loadFileAsts(config.files);
-
-const testTitles = fileAsts.reduce(titlePicker.pickTitles, []);
-
-(testTitles);
+fs.writeFileSync('./temp.html', output[0].fileContent);

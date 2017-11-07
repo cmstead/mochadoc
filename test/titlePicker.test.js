@@ -1,11 +1,11 @@
 'use strict';
 
-// const sinon = require('sinon');
+const assert = require('chai').assert;
 const container = require('../bin/container');
 
 require('./test-utilities/approvals-config');
 
-describe('configLoader', function () {
+describe('titlePicker', function () {
 
     let astLoader;
     let titlePicker;
@@ -16,13 +16,24 @@ describe('configLoader', function () {
         astLoader = childContainer.build('astLoader');
         titlePicker = childContainer.build('titlePicker');
     });
-    
-    it('should generate a tree of test descriptions from file asts', function() {
-        const globPattern = './test/fixtures/*.test.js';
-        const asts = astLoader.loadFileAsts(globPattern);
-        const titles = titlePicker.pickAllTitles(asts);
 
-        this.verify(JSON.stringify(titles, null, 4));
+    describe('pickAllTitles', function () {
+
+        it('should generate a tree of test descriptions from file asts', function () {
+            const globPattern = './test/fixtures/*.test.js';
+            const asts = astLoader.loadFileAsts(globPattern);
+            const titles = titlePicker.pickAllTitles(asts);
+
+            this.verify(JSON.stringify(titles, null, 4));
+        });
+
+        it('should throw an error if test files contain an only declaration', function () {
+            const globPattern = './test/fixtures/*.bad.js';
+            const asts = astLoader.loadFileAsts(globPattern);
+
+            assert.throws(titlePicker.pickAllTitles.bind(null, asts));
+        });
+
     });
 
 });

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Mochadoc Test Documentation</title>
+    </head>
+
+    <body>
+        <h1>astLoader</h1>
+
+<p>Tests and Descriptions:</p>
+
+<ul>
+    <li>
+    <h3>loadFileAsts</h3>
+    <ul>
+        <ul>
+    <li>
+        <strong>should properly generate an AST from a test file in the filesystem</strong>
+    </li>
+    <li>File location: ./test/astLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const globPattern &#x3D; &#x27;./test/fixtures/testFixture.0.test.js&#x27;;
+            const ast &#x3D; astLoader.loadFileAsts(globPattern);
+
+            this.verify(JSON.stringify(ast, null, 4));
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should properly generate ASTs from multiple test files in the filesystem</strong>
+    </li>
+    <li>File location: ./test/astLoader.test.js</li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            const globPattern &#x3D; &#x27;./test/fixtures/*.test.js&#x27;;
+            const ast &#x3D; astLoader.loadFileAsts(globPattern);
+
+            this.verify(JSON.stringify(ast, null, 4));
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+    </ul>
+</li>
+</ul>
+    </body>
+</html>

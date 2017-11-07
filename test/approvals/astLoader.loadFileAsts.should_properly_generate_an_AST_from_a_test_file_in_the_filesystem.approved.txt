@@ -1,6 +1,6 @@
 [
     {
-        "filePath": "./test/fixtures/testFixture.test.js",
+        "filePath": "./test/fixtures/testFixture.0.test.js",
         "fileLines": [
             "describe('TestFixture', function() {",
             "    ",

@@ -4,7 +4,8 @@
   "description": "Mocha/Jasmine tests to API documentation library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-templates": "handlebars ./templates/ -f ./templates/templates.js -c handlebars/runtime"
   },
   "bin": {
     "mochadoc": "index.js"
@@ -35,6 +36,7 @@
     "esprima": "^4.0.0",
     "estraverse": "^4.2.0",
     "glob": "^7.1.2",
+    "handlebars": "^4.0.11",
     "signet": "^6.4.2"
   },
   "devDependencies": {

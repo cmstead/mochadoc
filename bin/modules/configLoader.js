@@ -43,15 +43,16 @@ function configLoader(fileHelper) {
         return config;
     }
 
-    function loadConfig(filePath) {
-        const config = getConfigLoader(filePath)();
+    function loadConfig(filePath, container) {
+        const loadedConfig = returnConfigOrThrow(getConfigLoader(filePath)());
+        container.register(function config() { return loadedConfig; });
 
-        return returnConfigOrThrow(config);
+        return loadedConfig;
     }
 
     return {
         loadConfig: signet.enforce(
-            '[filePath] => mochadocConfig',
+            '[variant<null, filePath>] => mochadocConfig',
             loadConfig)
     };
 }
