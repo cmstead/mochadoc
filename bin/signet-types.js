@@ -15,6 +15,10 @@ signet.alias('sourceCode', 'string');
 
 signet.subtype('object')('sourceAst', isSourceAst);
 
+signet.subtype('object')('astLiteral', function(value) {
+    return value !== null && value.type === 'Literal';
+});
+
 signet.defineDuckType('mochadocConfig', {
     files: 'globPatternData',
     dest: 'filePath'

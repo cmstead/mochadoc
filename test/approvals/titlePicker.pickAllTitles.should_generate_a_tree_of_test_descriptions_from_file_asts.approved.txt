@@ -17,13 +17,13 @@
                                 "description": "should have a test",
                                 "file": "./test/fixtures/test-fixture.2.test.js",
                                 "methodType": "it",
-                                "testBody": "function() {\n            // this is a test\n        }"
+                                "testBody": "function () {\n            // this is a test\n        }"
                             },
                             {
                                 "description": "should have another test",
                                 "file": "./test/fixtures/test-fixture.2.test.js",
                                 "methodType": "it",
-                                "testBody": "function() {\n            // this is a second test\n        }"
+                                "testBody": "function () {\n            // this is a second test\n        }"
                             }
                         ]
                     },
@@ -32,6 +32,44 @@
                         "file": "./test/fixtures/test-fixture.2.test.js",
                         "methodType": "describe",
                         "testBody": ""
+                    },
+                    {
+                        "description": "something else",
+                        "file": "./test/fixtures/test-fixture.2.test.js",
+                        "methodType": "describe",
+                        "testBody": "",
+                        "children": [
+                            {
+                                "description": "This is a Jest style test",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "test",
+                                "testBody": ""
+                            },
+                            {
+                                "description": "/This is regex/",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "it",
+                                "testBody": "() => {\n            // a test with regex\n        }"
+                            },
+                            {
+                                "description": "testTitleValue, () => {",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "it",
+                                "testBody": "() => {\n\n        }"
+                            },
+                            {
+                                "description": "testTitleValue + 'a string', () => {",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "it",
+                                "testBody": "() => {\n\n        }"
+                            },
+                            {
+                                "description": "'a string' + testTitleValue, () => {",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "it",
+                                "testBody": "() => {\n\n        }"
+                            }
+                        ]
                     }
                 ]
             }

@@ -1,19 +1,49 @@
-describe('TestFixture', function() {
-    
-    describe('function 3', function() {
+describe('TestFixture', function () {
 
-        it('should have a test', function() {
+    describe('function 3', function () {
+
+        it('should have a test', function () {
             // this is a test
         });
 
-        it('should have another test', function() {
+        it('should have another test', function () {
             // this is a second test
         });
-        
+
     });
 
-    describe('function 4', function() {
-        
+    describe('function 4', function () {
+
     });
-    
+
+    describe('something else', function () {
+        const testTitleValue = 'Testing';
+
+        // Jest style tests
+        test('This is a Jest style test', () => {
+            const stuff = 5;
+            assert('foo' !== stuff);
+        });
+
+        // A test with regex in the description
+        it(/This is regex/, () => {
+            // a test with regex
+        });
+
+        // This is a non-string description
+        it(testTitleValue, () => {
+
+        });
+
+        // This is a non-string description
+        it(testTitleValue + 'a string', () => {
+
+        });
+
+        // This is a non-string description
+        it('a string' + testTitleValue, () => {
+
+        });
+    });
+
 });

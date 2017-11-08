@@ -12,7 +12,7 @@ function titlePicker(
         let expressionName = node.expression.callee.name;
 
         if (typeof expressionName === 'undefined') {
-            try{
+            try {
                 expressionName = node.expression.callee.property.name;
             } catch (e) {
                 expressionName = '';
@@ -54,6 +54,18 @@ function titlePicker(
             : '';
     }
 
+    function getDescriptionBlock(node, fileAst) {
+        const testBodyCoords = node.expression.arguments[0].loc;
+
+        return selectionBuilder.buildSelection(testBodyCoords, fileAst.fileLines);
+    }
+
+    function getTestDescription(node, fileAst) {
+        return signet.isTypeOf('variant<string, object>')(node.expression.arguments[0].value)
+            ? node.expression.arguments[0].value
+            : getDescriptionBlock(node, fileAst);
+    }
+
     function pickTitles(resultData, fileAst) {
 
         let outputValues = {};
@@ -69,7 +81,7 @@ function titlePicker(
                     addChildArray(currentOutputObj);
 
                     const childScope = {
-                        description: node.expression.arguments[0].value,
+                        description: getTestDescription(node, fileAst).toString(),
                         file: fileAst.filePath,
                         methodType: getExpressionName(node),
                         parent: currentOutputObj,
