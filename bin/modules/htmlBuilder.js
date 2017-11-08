@@ -1,5 +1,6 @@
 'use strict';
 
+const signet = require('../signet-types');
 const handlebars = require('handlebars/runtime');
 require('../../templates/templates');
 
@@ -12,7 +13,7 @@ function htmlBuilder() {
     }
 
     function describeBuilder(descriptionData) {
-        const subContent = typeof descriptionData.children !== 'undefined'
+        const subContent = signet.isTypeOf('array')(descriptionData.children)
             ? descriptionData.children.map(buildSubContent).join('\n')
             : '<strong>No tests in this block.</strong>';
 
@@ -33,7 +34,9 @@ function htmlBuilder() {
     }
 
     function buildPage(descriptionData) {
-        const subcontent = descriptionData.children.map(buildSubContent).join('\n');
+        const subcontent = signet.isTypeOf('array')(descriptionData.children)
+            ? descriptionData.children.map(buildSubContent).join('\n')
+            : '';
 
         const context = {
             description: descriptionData.description,
@@ -47,16 +50,18 @@ function htmlBuilder() {
         const fileNameValue = description
             .replace(/\s/ig, '-')
             .replace(/\W/ig, '');
-        
+
         return fileNameValue + '.html';
     }
 
     function buildTitleAsCore(descriptionTree) {
-        const treeHasChildren = descriptionTree.children.length > 0;
+        const treeHasChildren = signet.isTypeOf('array')(descriptionTree.children)
+            && descriptionTree.children.length > 0;
+
         const topLevelDescription = treeHasChildren
             ? descriptionTree.children[0].description
             : '';
-        
+
         const content = treeHasChildren
             ? buildPage(descriptionTree)
             : '';
@@ -85,7 +90,7 @@ function htmlBuilder() {
             .map(htmlObjectToContext)
             .map((fileContext) => templates.describeLink(fileContext))
             .join('\n');
-        
+
         return {
             fileDescription: '',
             fileName: 'index.html',
