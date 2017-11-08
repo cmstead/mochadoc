@@ -17,6 +17,7 @@ Once installed, create a configuration in your package folder.  This can be done
         ...
     },
     "mochadoc": {
+        "projectName": "My Amazing Project",
         "files": "./test/**/*.js",
         "dest": "./docs/api"
     }
@@ -27,6 +28,7 @@ Once installed, create a configuration in your package folder.  This can be done
 
 ```
 {
+    "projectName": "My Amazing Project",
     "files": "./test/**/*.js",
     "dest": "./docs/api"
 }
@@ -41,6 +43,11 @@ To create documentation from your test files, simply type 'mochadoc' in your pro
 **That's all for now!**
 
 ## Changelog ##
+
+**v0.3.0**
+
+- Added styles and formatting
+- Updated config handler to use projectName property
 
 **v0.2.1**
 
