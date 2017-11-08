@@ -1,6 +1,6 @@
 {
   "name": "mochadoc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Mocha/Jasmine tests to API documentation library",
   "main": "index.js",
   "scripts": {
