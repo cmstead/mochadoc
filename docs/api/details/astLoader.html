@@ -1,13 +1,19 @@
 <html>
-    <head>
-        <title>Mochadoc Test Documentation</title>
-    </head>
 
-    <body>
+<head>
+    <title>Mochadoc Test Documentation</title>
+
+    <link rel="stylesheet" href="../assets/doc-style.css" media="screen">
+    <link rel="stylesheet" href="../assets/github-gist.css" media="screen">
+</head>
+
+<body>
+    <header>
         <a href="../index.html">&lt; Back to Home</a>
-        <h1>astLoader</h1>
+    </header>
 
-<p>Tests and Descriptions:</p>
+    <div class="content">
+        <h1>astLoader</h1>
 
 <ul>
     <li>
@@ -17,7 +23,7 @@
     <li>
         <strong>should properly generate an AST from a test file in the filesystem</strong>
     </li>
-    <li>File location: ./test/astLoader.test.js</li>
+    <li>File location: <span class="filename">./test/astLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -35,7 +41,7 @@
     <li>
         <strong>should properly generate ASTs from multiple test files in the filesystem</strong>
     </li>
-    <li>File location: ./test/astLoader.test.js</li>
+    <li>File location: <span class="filename">./test/astLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -52,5 +58,10 @@
     </ul>
 </li>
 </ul>
-    </body>
+    </div>
+
+    <script src="../assets/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
 </html>

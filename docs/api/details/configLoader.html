@@ -1,13 +1,19 @@
 <html>
-    <head>
-        <title>Mochadoc Test Documentation</title>
-    </head>
 
-    <body>
+<head>
+    <title>Mochadoc Test Documentation</title>
+
+    <link rel="stylesheet" href="../assets/doc-style.css" media="screen">
+    <link rel="stylesheet" href="../assets/github-gist.css" media="screen">
+</head>
+
+<body>
+    <header>
         <a href="../index.html">&lt; Back to Home</a>
-        <h1>configLoader</h1>
+    </header>
 
-<p>Tests and Descriptions:</p>
+    <div class="content">
+        <h1>configLoader</h1>
 
 <ul>
     <li>
@@ -17,7 +23,7 @@
     <li>
         <strong>should load a config file from a user-defined path</strong>
     </li>
-    <li>File location: ./test/configLoader.test.js</li>
+    <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -36,7 +42,7 @@
     <li>
         <strong>should load a config file from .mochadocrc when no file is specified</strong>
     </li>
-    <li>File location: ./test/configLoader.test.js</li>
+    <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -54,7 +60,7 @@
     <li>
         <strong>should load a config file from package.json when no file is specified and .mochadocrc is missing</strong>
     </li>
-    <li>File location: ./test/configLoader.test.js</li>
+    <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -79,7 +85,7 @@
     <li>
         <strong>should throw an error when config is malformed</strong>
     </li>
-    <li>File location: ./test/configLoader.test.js</li>
+    <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -96,7 +102,7 @@
     <li>
         <strong>should throw an error when config in package.json is missing</strong>
     </li>
-    <li>File location: ./test/configLoader.test.js</li>
+    <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -114,7 +120,7 @@
     <li>
         <strong>should throw an error if no configuration file is found</strong>
     </li>
-    <li>File location: ./test/configLoader.test.js</li>
+    <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
     <li>
         <pre>
             <code>
@@ -130,5 +136,10 @@
     </ul>
 </li>
 </ul>
-    </body>
+    </div>
+
+    <script src="../assets/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
 </html>
