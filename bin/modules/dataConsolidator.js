@@ -1,5 +1,7 @@
 'use strict';
 
+const signet = require('../signet-types');
+
 function dataConsolidator() {
 
     const matchesDescription =
@@ -21,7 +23,9 @@ function dataConsolidator() {
     }
 
     function mergeChildData(consolidatedData, childRecord) {
-        return childRecord.children.reduce(mergeRecord, consolidatedData);
+        return signet.isTypeOf('array')(childRecord.children)
+            ? childRecord.children.reduce(mergeRecord, consolidatedData)
+            : consolidatedData;
     }
 
     function consolidateDescriptionData(descriptionData) {
