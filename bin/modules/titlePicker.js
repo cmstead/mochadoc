@@ -12,7 +12,11 @@ function titlePicker(
         let expressionName = node.expression.callee.name;
 
         if (typeof expressionName === 'undefined') {
-            expressionName = node.expression.callee.property.name;
+            try{
+                expressionName = node.expression.callee.property.name;
+            } catch (e) {
+                expressionName = '';
+            }
         }
 
         return expressionName;
