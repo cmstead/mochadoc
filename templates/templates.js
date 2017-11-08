@@ -8,7 +8,9 @@ templates['core'] = template({"compiler":[7,">= 4.0.0"],"main":function(containe
     + alias4(((helper = (helper = helpers.fileRoot || (depth0 != null ? depth0.fileRoot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileRoot","hash":{},"data":data}) : helper)))
     + "assets/github-gist.css\" media=\"screen\">\r\n</head>\r\n\r\n<body>\r\n    <header>\r\n        <a href=\""
     + alias4(((helper = (helper = helpers.fileRoot || (depth0 != null ? depth0.fileRoot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileRoot","hash":{},"data":data}) : helper)))
-    + "index.html\">&lt; Back to Home</a>\r\n    </header>\r\n\r\n    <div class=\"content\">\r\n        "
+    + "index.html\"><span id=\"library-name\">"
+    + alias4(((helper = (helper = helpers.projectName || (depth0 != null ? depth0.projectName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectName","hash":{},"data":data}) : helper)))
+    + "</span>\r\n        <span id=\"subtitle\">Mochadoc-Generated Test Documents</span></a>\r\n    </header>\r\n\r\n    <div class=\"content\">\r\n        "
     + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n    </div>\r\n\r\n    <script src=\""
     + alias4(((helper = (helper = helpers.fileRoot || (depth0 != null ? depth0.fileRoot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileRoot","hash":{},"data":data}) : helper)))

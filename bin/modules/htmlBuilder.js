@@ -6,7 +6,7 @@ require('../../templates/templates');
 
 const templates = handlebars.templates;
 
-function htmlBuilder() {
+function htmlBuilder(config) {
 
     function itBuilder(descriptionData) {
         return templates.testItem(descriptionData);
@@ -58,6 +58,12 @@ function htmlBuilder() {
         return fileNameValue + '.html';
     }
 
+    function getProjectName () {
+        return typeof config.projectName !== 'undefined'
+            ? config.projectName
+            : 'Project name not specified';
+    }
+
     function buildTitleAsCore(descriptionTree) {
         const treeHasChildren = signet.isTypeOf('array')(descriptionTree.children)
             && descriptionTree.children.length > 0;
@@ -70,6 +76,7 @@ function htmlBuilder() {
 
         const context = {
             content: content,
+            projectName: getProjectName(),            
             fileRoot: '../'
         };
 
@@ -93,10 +100,17 @@ function htmlBuilder() {
             .map((fileContext) => templates.describeLink(fileContext))
             .join('\n');
 
+        const indexContext = {
+            fileRoot: './',
+            projectName: getProjectName(),
+            content: '<h1>' + getProjectName() + '</h1>' +
+            '<ul>\n' + content + '\n</ul>'
+        };
+
         return {
             fileDescription: '',
             fileName: 'index.html',
-            fileContent: templates.core({ fileRoot: './', content: '<ul>\n' + content + '\n</ul>' })
+            fileContent: templates.core(indexContext)
         };
     }
 
