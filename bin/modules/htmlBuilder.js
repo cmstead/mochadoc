@@ -62,9 +62,7 @@ function htmlBuilder() {
         const treeHasChildren = signet.isTypeOf('array')(descriptionTree.children)
             && descriptionTree.children.length > 0;
 
-        const topLevelDescription = treeHasChildren
-            ? descriptionTree.children[0].description
-            : '';
+        const topLevelDescription = descriptionTree.description;
 
         const content = treeHasChildren
             ? buildPage(descriptionTree)
