@@ -47,7 +47,11 @@ function htmlBuilder() {
     }
 
     function descriptionToFileName(description) {
-        const fileNameValue = description
+        const cleanDescription = signet.isTypeOf('string')(description)
+            ? description
+            : 'No description';
+
+        const fileNameValue = cleanDescription
             .replace(/\s/ig, '-')
             .replace(/\W/ig, '');
 
