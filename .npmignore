@@ -1,0 +1,7 @@
+test/
+docs/
+templates/*.handlebars
+.editorconfig
+.eslintrc
+.mochadocrc
+gulfile.js
