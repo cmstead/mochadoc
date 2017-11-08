@@ -30,7 +30,8 @@ function titlePicker(
     function isTestMethodCall(node) {
         return isFunctionCall(node)
             && (getExpressionName(node) === 'describe'
-                || getExpressionName(node) === 'it');
+                || getExpressionName(node) === 'it'
+                || getExpressionName(node) === 'test');
     }
 
     function isOnlyCall(node) {
