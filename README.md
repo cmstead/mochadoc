@@ -1,5 +1,5 @@
-Mochadoc - The Mocha/Jasmine Test To API Doc Tool
-=================================================
+Mochadoc - The Mocha/Jasmine/Jest Test To API Doc Tool
+======================================================
 
 ## Setup ##
 
@@ -41,6 +41,12 @@ To create documentation from your test files, simply type 'mochadoc' in your pro
 **That's all for now!**
 
 ## Changelog ##
+
+**v0.2.1**
+
+- Updated to handle cases where describe blocks are not used
+- Added support for Jest "test" syntax instead of "it"
+- Improved description argument handling for non-string values
 
 **v0.1.1**
 
