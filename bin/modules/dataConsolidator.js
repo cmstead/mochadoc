@@ -11,7 +11,7 @@ function dataConsolidator() {
     function mergeRecord(consolidatedData, descriptionRecord) {
         const existingRecord = consolidatedData.find(matchesDescription(descriptionRecord));
 
-        if(typeof existingRecord === 'undefined') {
+        if(!existingRecord || !existingRecord.children) {
             consolidatedData.push(descriptionRecord);
         } else {
             existingRecord.children = existingRecord.children.concat(descriptionRecord.children);
