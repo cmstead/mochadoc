@@ -50,6 +50,28 @@ The option which is most likely to be useful is the alternate configuration opti
 
 `mochadoc --config path/to/config/file`
 
+## Mochadoc Help Output ##
+
+__Mochadoc - the fast, easy test to document utility__
+
+  Generates documents from Mocha BDD, Jasmine and Jest test files.
+
+__Synopsis__
+
+```bash
+$ mochadoc [--silent] [--json] [--config path/to/file]
+$ mochadoc [--help|-h]
+```
+
+__Options__
+|Switch       |Input Type |Description                                 |
+|-------------|-----------|--------------------------------------------|
+|-c, --config |filePath   |Alternate location for config file          |
+|--dryrun     |           |Does everything except write to file system |
+|-h, --help   |           |Outputs command docs                        |
+|--json       |           |Outputs title raw JSON to stdout            |
+|-s, --silent |           |Turns off all logging                       |
+
 ## Changelog ##
 
 **v0.5.0**
