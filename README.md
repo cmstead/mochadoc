@@ -1,5 +1,7 @@
-Mochadoc - The Mocha/Jasmine/Jest Test To API Doc Tool
-======================================================
+Mochadoc
+========
+
+The dead simple way to create docs from Mocha BDD, Jasmine and Jest tests.
 
 ## Setup ##
 
@@ -64,13 +66,13 @@ $ mochadoc [--help|-h]
 ```
 
 __Options__
-|Switch       |Input Type |Description                                 |
-|-------------|-----------|--------------------------------------------|
-|-c, --config |filePath   |Alternate location for config file          |
-|--dryrun     |           |Does everything except write to file system |
-|-h, --help   |           |Outputs command docs                        |
-|--json       |           |Outputs title raw JSON to stdout            |
-|-s, --silent |           |Turns off all logging                       |
+| Switch        | Input Type  | Description                                  |
+| ------------- | ----------- | -------------------------------------------- |
+| -c, --config  | filePath    | Alternate location for config file           |
+| --dryrun      |             | Does everything except write to file system  |
+| -h, --help    |             | Outputs command docs                         |
+| --json        |             | Outputs title raw JSON to stdout             |
+| -s, --silent  |             | Turns off all logging                        |
 
 ## Changelog ##
 
