@@ -102,6 +102,10 @@ header {
     color: #fff;
 }
 
+header > a {
+    text-decoration: none;
+}
+
 header > a > span {
     display: inline-block;
     text-decoration: none;

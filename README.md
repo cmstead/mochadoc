@@ -44,6 +44,11 @@ To create documentation from your test files, simply type 'mochadoc' in your pro
 
 ## Changelog ##
 
+**v0.4.1**
+
+- Alphabetized results on index page
+- Fixed underline bug in header
+
 **v0.3.0**
 
 - Added styles and formatting
