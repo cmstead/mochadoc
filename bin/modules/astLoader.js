@@ -5,7 +5,8 @@ const signet = require('../signet-types');
 function astLoader(
     codeParser,
     fileGlobber,
-    fileHelper) {
+    fileHelper,
+    logger) {
 
     function getFileAndPath(filePath) {
         return {
@@ -30,9 +31,8 @@ function astLoader(
         };
     }
 
-    function loadFileAsts(globPatternData) {
-        return fileGlobber
-            .globFiles(globPatternData)
+    function loadFileAsts(fileData) {
+        return fileData
             .map(function (filePath) {
                 return splitTestSource(
                     parseFileContents(
@@ -42,7 +42,7 @@ function astLoader(
 
     return {
         loadFileAsts: signet.enforce(
-            'globPatternData => array<fileAstRecord>', 
+            'globPatternData => array<fileAstRecord>',
             loadFileAsts)
     };
 

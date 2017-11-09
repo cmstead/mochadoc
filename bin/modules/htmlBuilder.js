@@ -6,7 +6,9 @@ require('../../templates/templates');
 
 const templates = handlebars.templates;
 
-function htmlBuilder(config) {
+function htmlBuilder(
+    config,
+    logger) {
 
     function itBuilder(descriptionData) {
         return templates.testItem(descriptionData);
@@ -58,7 +60,7 @@ function htmlBuilder(config) {
         return fileNameValue + '.html';
     }
 
-    function getProjectName () {
+    function getProjectName() {
         return typeof config.projectName !== 'undefined'
             ? config.projectName
             : 'Project name not specified';
@@ -76,7 +78,7 @@ function htmlBuilder(config) {
 
         const context = {
             content: content,
-            projectName: getProjectName(),            
+            projectName: getProjectName(),
             fileRoot: '../'
         };
 
@@ -121,9 +123,12 @@ function htmlBuilder(config) {
     }
 
     function buildHtml(titleData) {
+        logger.log('Building document HTML... ');
         const htmlObjects = titleData.map(buildTitleAsCore);
 
         htmlObjects.push(buildIndexHtml(htmlObjects));
+
+        logger.success('done').crlf();
 
         return htmlObjects;
     }
