@@ -21,6 +21,7 @@ function cliUsageBuilder () {
             optionList: [
                 {
                     name: 'config',
+                    alias: 'c',
                     typeLabel: '[italic]{filePath}',
                     description: 'Alternate location for config file'
                 },
@@ -39,6 +40,7 @@ function cliUsageBuilder () {
                 },
                 {
                     name: 'silent',
+                    alias: 's',
                     description: 'Turns off all logging'
                 }
             ]

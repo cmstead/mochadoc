@@ -6,8 +6,8 @@ function cliOptionBuilder() {
         const commandLineArgs = require('command-line-args');
 
         const cliOptionDefinitions = [
-            { name: 'config', type: String },
-            { name: 'silent', type: Boolean },
+            { name: 'config', alias: 'c', type: String },
+            { name: 'silent', alias: 's', type: Boolean },
             { name: 'json', type: Boolean },
             { name: 'dryrun', type: Boolean },
             { name: 'help', alias: 'h', type: Boolean }

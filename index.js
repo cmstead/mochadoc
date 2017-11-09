@@ -8,7 +8,9 @@ const options = container.build('cliOptionBuilder').getOptions(container);
 
 if(options.help){
     const usageInfo = container.build('cliUsageBuilder');
+    
     console.log(usageInfo);
+
     process.exit(0);
 }
 
@@ -28,11 +30,11 @@ const htmlFileData = !options.json
     ? container.build('htmlBuilder').buildHtml(titleData)
     : '';
 
-if (options.json) {
+if (!options.dryrun && options.json) {
     console.log(JSON.stringify(titleData));
 }
 
-if (!options.dryrun) {
+if (!options.dryrun && !options.json) {
 
     logger.log('Writing files... ');
 
