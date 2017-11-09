@@ -34,15 +34,27 @@ Once installed, create a configuration in your package folder.  This can be done
 }
 ```
 
+The config file can be stored elsewhere and referenced with the `--config` flag.
+
 ## Running Mochadoc ##
 
-To create documentation from your test files, simply type 'mochadoc' in your project dorectory (the same directory with the configuration file or package.json) like this:
+Mochadoc has a rich CLI option set.  By default, verbose mode is enabled, and file writing is the core behavior.  Mochadoc will automatically search for a config file in the directory it is called from.  Basic execution is as follows:
 
 `mochadoc`
 
-**That's all for now!**
+For a list of the entire set of options, run mochadoc with the help option:
+
+`mochadoc --help`
+
+The option which is most likely to be useful is the alternate configuration option:
+
+`mochadoc --config path/to/config/file`
 
 ## Changelog ##
+
+**v0.5.0**
+
+- Added CLI options
 
 **v0.4.1**
 
