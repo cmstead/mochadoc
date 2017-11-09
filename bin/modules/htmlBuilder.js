@@ -94,9 +94,15 @@ function htmlBuilder(config) {
         }
     }
 
+    function compareContextObjects(obj1, obj2) {
+        const initialResult = obj1.fileName < obj2.fileName ? -1 : 0;
+        return obj1.fileName > obj2.fileName ? 1 : initialResult;
+    }
+
     function buildIndexHtml(htmlObjects) {
         const content = htmlObjects
             .map(htmlObjectToContext)
+            .sort(compareContextObjects)
             .map((fileContext) => templates.describeLink(fileContext))
             .join('\n');
 
