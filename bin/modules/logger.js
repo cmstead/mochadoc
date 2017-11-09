@@ -3,12 +3,15 @@
 const chalk = require('chalk');
 const process = require('process');
 
-function logger() {
+function logger(cliOptions) {
 
     let api = {};
 
     function write(message) {
-        process.stdout.write(message);
+        if(!cliOptions.silent) {
+            process.stdout.write(message);
+        }
+
         return api;
     }
 

@@ -2,6 +2,16 @@
 
 const chalk = require('chalk');
 const container = require('./bin/container');
+const process = require('process');
+
+const options = container.build('cliOptionBuilder').getOptions(container);
+
+if(options.help){
+    const usageInfo = container.build('cliUsageBuilder');
+    console.log(usageInfo);
+    process.exit(0);
+}
+
 const logger = container.build('logger');
 
 logger
@@ -9,19 +19,29 @@ logger
     .log(chalk.white.bold('Starting Mochadoc'))
     .crlf().crlf();
 
-container.build('configLoader').loadConfig(null, container);
+container.build('configLoader').loadConfig(options.config, container);
 const config = container.build('config');
 
 const titleData = container.build('titleDataLoader').loadTitleData();
-const htmlFileData = container.build('htmlBuilder').buildHtml(titleData);
 
-logger.log('Writing files... ');
+const htmlFileData = !options.json
+    ? container.build('htmlBuilder').buildHtml(titleData)
+    : '';
 
-container.build('fileWriter').writeAllFiles(htmlFileData);
+if (options.json) {
+    console.log(JSON.stringify(titleData));
+}
 
-logger.success('done').crlf();
+if (!options.dryrun) {
 
-logger
-    .crlf()
-    .log('Files written to ' + config.dest).crlf()
-    .success('Document generation complete.').crlf().crlf();
+    logger.log('Writing files... ');
+
+    container.build('fileWriter').writeAllFiles(htmlFileData);
+
+    logger.success('done')
+        .crlf()
+        .crlf()
+        .log('Files written to ' + config.dest);
+}
+
+logger.crlf().success('Document generation complete.').crlf().crlf();
