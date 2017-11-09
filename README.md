@@ -66,13 +66,13 @@ $ mochadoc [--help|-h]
 ```
 
 __Options__
-| Switch        | Input Type  | Description                                  |
-| ------------- | ----------- | -------------------------------------------- |
-| -c, --config  | filePath    | Alternate location for config file           |
-| --dryrun      |             | Does everything except write to file system  |
-| -h, --help    |             | Outputs command docs                         |
-| --json        |             | Outputs title raw JSON to stdout             |
-| -s, --silent  |             | Turns off all logging                        |
+| Switch | Input Type | Description |
+| --- | --- | --- |
+| -c, --config | filePath | Alternate location for config file |
+| --dryrun | | Does everything except write to file system  |
+| -h, --help | | Outputs command docs |
+| --json | | Outputs title raw JSON to stdout |
+| -s, --silent | | Turns off all logging |
 
 ## Changelog ##
 
