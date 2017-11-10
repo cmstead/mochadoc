@@ -53,6 +53,10 @@ function htmlBuilder(
             ? description
             : 'No description';
 
+        if(cleanDescription === 'No description') {
+            console.log(description);
+        }
+
         const fileNameValue = cleanDescription
             .replace(/\s/ig, '-')
             .replace(/\W/ig, '');

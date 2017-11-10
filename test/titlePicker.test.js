@@ -7,12 +7,14 @@ require('./test-utilities/approvals-config');
 
 describe('titlePicker', function () {
 
+    let fileGlobber;
     let astLoader;
     let titlePicker;
 
     beforeEach(function () {
         const childContainer = container.new();
 
+        fileGlobber = childContainer.build('fileGlobber');
         astLoader = childContainer.build('astLoader');
         titlePicker = childContainer.build('titlePicker');
     });
@@ -21,7 +23,8 @@ describe('titlePicker', function () {
 
         it('should generate a tree of test descriptions from file asts', function () {
             const globPattern = './test/fixtures/*.test.js';
-            const asts = astLoader.loadFileAsts(globPattern);
+            const fileData = fileGlobber.globFiles(globPattern);
+            const asts = astLoader.loadFileAsts(fileData);
             const titles = titlePicker.pickAllTitles(asts);
 
             this.verify(JSON.stringify(titles, null, 4));
@@ -29,7 +32,8 @@ describe('titlePicker', function () {
 
         it('should throw an error if test files contain an only declaration', function () {
             const globPattern = './test/fixtures/*.bad.js';
-            const asts = astLoader.loadFileAsts(globPattern);
+            const fileData = fileGlobber.globFiles(globPattern);
+            const asts = astLoader.loadFileAsts(fileData);
 
             assert.throws(titlePicker.pickAllTitles.bind(null, asts));
         });

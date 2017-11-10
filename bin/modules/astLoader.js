@@ -4,9 +4,7 @@ const signet = require('../signet-types');
 
 function astLoader(
     codeParser,
-    fileGlobber,
-    fileHelper,
-    logger) {
+    fileHelper) {
 
     function getFileAndPath(filePath) {
         return {

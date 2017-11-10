@@ -15,13 +15,24 @@ describe('htmlBuilder', function () {
 
         childContainer.register(function config() {
             return {
+                projectName: 'My Project',
                 files: globPattern,
                 dest: ''
             };
         });
 
+        childContainer.register(function cliOptions() {
+            return {};
+        });
+
+        const fileData = childContainer.build('fileGlobber').globFiles(globPattern);
+        const astData = childContainer.build('astLoader').loadFileAsts(fileData);
+        const pickTitles = childContainer.build('titlePicker').pickTitles;
+
+        const rawTitleData = astData.reduce(pickTitles, []);
+        titleData = childContainer.build('dataConsolidator').consolidateDescriptionData(rawTitleData);
+
         htmlBuilder = childContainer.build('htmlBuilder');
-        titleData = childContainer.build('titleDataLoader').loadTitleData();
     });
 
     describe('buildHtml', function () {
