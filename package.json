@@ -1,6 +1,6 @@
 {
   "name": "mochadoc",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "The dead simple way to create docs from Mocha BDD, Jasmine and Jest tests",
   "main": "index.js",
   "scripts": {
