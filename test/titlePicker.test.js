@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const container = require('../bin/container');
+const fs = require('fs');
 
 require('./test-utilities/approvals-config');
 
@@ -23,6 +24,17 @@ describe('titlePicker', function () {
 
         it('should generate a tree of test descriptions from file asts', function () {
             const globPattern = './test/fixtures/*.test.js';
+            const fileData = fileGlobber.globFiles(globPattern);
+            const asts = astLoader.loadFileAsts(fileData);
+            const titles = titlePicker.pickAllTitles(asts);
+
+            this.verify(JSON.stringify(titles, null, 4));
+        });
+
+        it('should properly collect data from a jest test', function () {
+            fs.writeFileSync('./temp.json', '[]');
+
+            const globPattern = './test/fixtures/*.jest.js';
             const fileData = fileGlobber.globFiles(globPattern);
             const asts = astLoader.loadFileAsts(fileData);
             const titles = titlePicker.pickAllTitles(asts);

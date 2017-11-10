@@ -1,0 +1,20 @@
+[
+    {
+        "children": [
+            {
+                "description": "Capitalization",
+                "file": "./test/fixtures/test-fixture.jest.js",
+                "methodType": "describe",
+                "testBody": "",
+                "children": [
+                    {
+                        "description": "Capitalizer",
+                        "file": "./test/fixtures/test-fixture.jest.js",
+                        "methodType": "test",
+                        "testBody": "function () {\n        expect(capitalize('hello')).toBe('Hello')\n    }"
+                    }
+                ]
+            }
+        ]
+    }
+]

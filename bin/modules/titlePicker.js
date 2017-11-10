@@ -23,21 +23,28 @@ function titlePicker(
     }
 
     function isFunctionCall(node) {
-        return node.type === 'ExpressionStatement'
-            && typeof node.expression.callee !== 'undefined'
-    }
-
-    function isTestMethodCall(node) {
-        return isFunctionCall(node)
-            && (getExpressionName(node) === 'describe'
-                || getExpressionName(node) === 'it'
-                || getExpressionName(node) === 'test');
+        return signet.isTypeOf('object')(node.expression)
+            && node.expression.type === 'CallExpression';
     }
 
     function isOnlyCall(node) {
-        return isFunctionCall(node)
-            && getExpressionName(node) === 'only';
+        return isFunctionCall(node) && getExpressionName(node) === 'only';
     }
+
+    function isDescribeCall(node) {
+        return isFunctionCall(node) && getExpressionName(node) === 'describe';
+    }
+
+    function isTestCall(node) {
+        return isFunctionCall(node)
+            && (getExpressionName(node) === 'it'
+                || getExpressionName(node) === 'test');
+    }
+
+    const isTestMethodCall =
+        (node) => {
+            return isTestCall(node) || isDescribeCall(node);
+        }
 
     function addChildArray(currentScope) {
         currentScope.children = isArray(currentScope.children)
@@ -46,10 +53,10 @@ function titlePicker(
     }
 
     function getTestBody(node, fileAst) {
-        const isItBlock = getExpressionName(node) === 'it';
+        const blockIsTestCall = isTestCall(node);
         const testBodyCoords = node.expression.arguments[1].loc;
 
-        return isItBlock
+        return blockIsTestCall
             ? selectionBuilder.buildSelection(testBodyCoords, fileAst.fileLines)
             : '';
     }

@@ -43,7 +43,7 @@
                                 "description": "This is a Jest style test",
                                 "file": "./test/fixtures/test-fixture.2.test.js",
                                 "methodType": "test",
-                                "testBody": ""
+                                "testBody": "() => {\n            const stuff = 5;\n            assert('foo' !== stuff);\n        }"
                             },
                             {
                                 "description": "/This is regex/",

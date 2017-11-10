@@ -19,6 +19,16 @@ signet.subtype('object')('astLiteral', function(value) {
     return value !== null && value.type === 'Literal';
 });
 
+signet.defineDuckType('astBlock', {
+    type: 'formattedString<BlockStatement>',
+    body: 'array'
+});
+
+signet.defineDuckType('astBlockArrow', {
+    type: 'formattedString<ArrowFunctionExpression>',
+    body: 'astBlock'
+});
+
 signet.defineDuckType('mochadocConfig', {
     files: 'globPatternData',
     dest: 'filePath'
