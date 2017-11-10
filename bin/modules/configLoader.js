@@ -37,7 +37,7 @@ function configLoader(fileHelper) {
 
     function returnConfigOrThrow(config) {
         if (!signet.isTypeOf('mochadocConfig')(config)) {
-            throw new Error(`Cannot find mochadoc configuration or configuration is malformed!`);
+            throw new Error('Cannot find mochadoc configuration or configuration is malformed!');
         }
 
         return config;

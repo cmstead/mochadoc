@@ -1,5 +1,0 @@
-{
-    "projectName": "Mochadoc",
-    "files": "./test/*.test.js",
-    "dest": "./docs/api/"
-}

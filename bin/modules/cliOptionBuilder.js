@@ -7,10 +7,11 @@ function cliOptionBuilder() {
 
         const cliOptionDefinitions = [
             { name: 'config', alias: 'c', type: String },
-            { name: 'silent', alias: 's', type: Boolean },
-            { name: 'json', type: Boolean },
             { name: 'dryrun', type: Boolean },
-            { name: 'help', alias: 'h', type: Boolean }
+            { name: 'help', alias: 'h', type: Boolean },
+            { name: 'init', type: Boolean },
+            { name: 'json', type: Boolean },
+            { name: 'silent', alias: 's', type: Boolean }
         ];
 
         const options = commandLineArgs(cliOptionDefinitions);

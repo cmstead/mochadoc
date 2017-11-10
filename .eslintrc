@@ -12,7 +12,7 @@
     },
     "rules": {
         "no-undef": 1,
-        "no-console": 1
+        "no-console": 0
     },
     "globals": {
         "describe": false,

@@ -30,7 +30,30 @@
             <code>
         function () {
             const globPattern &#x3D; &#x27;./test/fixtures/*.test.js&#x27;;
-            const asts &#x3D; astLoader.loadFileAsts(globPattern);
+            const fileData &#x3D; fileGlobber.globFiles(globPattern);
+            const asts &#x3D; astLoader.loadFileAsts(fileData);
+            const titles &#x3D; titlePicker.pickAllTitles(asts);
+
+            this.verify(JSON.stringify(titles, null, 4));
+        }
+            </code>
+        </pre>
+    </li>
+</ul>
+<ul>
+    <li>
+        <strong>should properly collect data from a jest test</strong>
+    </li>
+    <li>File location: <span class="filename">./test/titlePicker.test.js</span></li>
+    <li>
+        <pre>
+            <code>
+        function () {
+            fs.writeFileSync(&#x27;./temp.json&#x27;, &#x27;[]&#x27;);
+
+            const globPattern &#x3D; &#x27;./test/fixtures/*.jest.js&#x27;;
+            const fileData &#x3D; fileGlobber.globFiles(globPattern);
+            const asts &#x3D; astLoader.loadFileAsts(fileData);
             const titles &#x3D; titlePicker.pickAllTitles(asts);
 
             this.verify(JSON.stringify(titles, null, 4));
@@ -49,7 +72,8 @@
             <code>
         function () {
             const globPattern &#x3D; &#x27;./test/fixtures/*.bad.js&#x27;;
-            const asts &#x3D; astLoader.loadFileAsts(globPattern);
+            const fileData &#x3D; fileGlobber.globFiles(globPattern);
+            const asts &#x3D; astLoader.loadFileAsts(fileData);
 
             assert.throws(titlePicker.pickAllTitles.bind(null, asts));
         }

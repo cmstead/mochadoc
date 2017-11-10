@@ -9,7 +9,11 @@ First install Mochadoc globally from NPM:
 
 `npm install -g mochadoc`
 
-Once installed, create a configuration in your package folder.  This can be done by adding a mochadoc object to your package.json file or by creating a .mochadocrc config file.  Examples below:
+After installation, open a console/terminal in your project root directory and set up a new mochadoc configuration with the following command:
+
+`mochadoc --init`
+
+If you would prefer to have your configuration in your package file, you can create it by hand.  The format is detailed below.
 
 **Add configuration to your package.json like this:**
 
@@ -60,17 +64,22 @@ __Mochadoc - the fast, easy test to document utility__
 
 __Synopsis__
 
+Examples of use:
+
 ```bash
+$ mochadoc --help
+$ mochadoc --init
 $ mochadoc [--silent] [--json] [--config path/to/file]
-$ mochadoc [--help|-h]
 ```
 
 __Options__
+
 | Switch | Input Type | Description |
 | --- | --- | --- |
-| -c, --config | filePath | Alternate location for config file |
-| --dryrun | | Does everything except write to file system  |
+| -c, --config | filePath | Alternate location for config file|
+| --dryrun | | Does everything except write to file system |
 | -h, --help | | Outputs command docs |
+| --init | | Generates a new mochadocrc file |
 | --json | | Outputs title raw JSON to stdout |
 | -s, --silent | | Turns off all logging |
 
