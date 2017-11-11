@@ -9,11 +9,22 @@ function configBuilder() {
         return value !== '';
     }
 
+    function last (values){
+        return values[values.length - 1];
+    }
+
+    function cleanDestPath(dest) {
+        const destTokens = dest.split(/[\\/]/ig).map(token => token.trim());
+        return last(destTokens) === ''
+            ? destTokens.join('/')
+            : destTokens.concat(['']).join('/');
+    }
+
     function writeResults(responses) {
         const configObj = {
             projectName: responses.projectName,
             files: responses.files,
-            dest: responses.dest
+            dest: cleanDestPath(responses.dest)
         };
 
         fs.writeFileSync('.mochadocrc', JSON.stringify(configObj, null, 4));
