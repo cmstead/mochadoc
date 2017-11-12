@@ -85,6 +85,16 @@ __Options__
 
 ## Changelog ##
 
+**v0.7.0**
+
+- Added code sample collapsing in generated docs for easier scanning
+
+**v0.6.0**
+
+- Added init behavior
+- Improved tests around internal code
+- Updated error messaging when mochadoc config is missing
+
 **v0.5.0**
 
 - Added CLI options
