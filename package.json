@@ -1,7 +1,7 @@
 {
   "name": "mochadoc",
   "version": "0.7.1",
-  "description": "The dead simple way to create docs from Mocha BDD, Jasmine and Jest tests",
+  "description": "The dead simple way to create docs from Mocha BDD & TDD, Jasmine and Jest tests",
   "main": "index.js",
   "scripts": {
     "test": "gulp test",

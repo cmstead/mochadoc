@@ -50,6 +50,12 @@
             "        });",
             "    });",
             "",
+            "    suite('This is a test suite', function () {",
+            "        test('this is a tdd test', () => {",
+            "            // other stuff",
+            "        });",
+            "    });",
+            "",
             "});"
         ],
         "sourceAst": {
@@ -1248,6 +1254,185 @@
                                                     "column": 7
                                                 }
                                             }
+                                        },
+                                        {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                    "type": "Identifier",
+                                                    "name": "suite",
+                                                    "loc": {
+                                                        "start": {
+                                                            "line": 49,
+                                                            "column": 4
+                                                        },
+                                                        "end": {
+                                                            "line": 49,
+                                                            "column": 9
+                                                        }
+                                                    }
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "type": "Literal",
+                                                        "value": "This is a test suite",
+                                                        "raw": "'This is a test suite'",
+                                                        "loc": {
+                                                            "start": {
+                                                                "line": 49,
+                                                                "column": 10
+                                                            },
+                                                            "end": {
+                                                                "line": 49,
+                                                                "column": 32
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "FunctionExpression",
+                                                        "id": null,
+                                                        "params": [],
+                                                        "body": {
+                                                            "type": "BlockStatement",
+                                                            "body": [
+                                                                {
+                                                                    "type": "ExpressionStatement",
+                                                                    "expression": {
+                                                                        "type": "CallExpression",
+                                                                        "callee": {
+                                                                            "type": "Identifier",
+                                                                            "name": "test",
+                                                                            "loc": {
+                                                                                "start": {
+                                                                                    "line": 50,
+                                                                                    "column": 8
+                                                                                },
+                                                                                "end": {
+                                                                                    "line": 50,
+                                                                                    "column": 12
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "Literal",
+                                                                                "value": "this is a tdd test",
+                                                                                "raw": "'this is a tdd test'",
+                                                                                "loc": {
+                                                                                    "start": {
+                                                                                        "line": 50,
+                                                                                        "column": 13
+                                                                                    },
+                                                                                    "end": {
+                                                                                        "line": 50,
+                                                                                        "column": 33
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "ArrowFunctionExpression",
+                                                                                "id": null,
+                                                                                "params": [],
+                                                                                "body": {
+                                                                                    "type": "BlockStatement",
+                                                                                    "body": [],
+                                                                                    "loc": {
+                                                                                        "start": {
+                                                                                            "line": 50,
+                                                                                            "column": 41
+                                                                                        },
+                                                                                        "end": {
+                                                                                            "line": 52,
+                                                                                            "column": 9
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "generator": false,
+                                                                                "expression": false,
+                                                                                "async": false,
+                                                                                "loc": {
+                                                                                    "start": {
+                                                                                        "line": 50,
+                                                                                        "column": 35
+                                                                                    },
+                                                                                    "end": {
+                                                                                        "line": 52,
+                                                                                        "column": 9
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ],
+                                                                        "loc": {
+                                                                            "start": {
+                                                                                "line": 50,
+                                                                                "column": 8
+                                                                            },
+                                                                            "end": {
+                                                                                "line": 52,
+                                                                                "column": 10
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "loc": {
+                                                                        "start": {
+                                                                            "line": 50,
+                                                                            "column": 8
+                                                                        },
+                                                                        "end": {
+                                                                            "line": 52,
+                                                                            "column": 11
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "loc": {
+                                                                "start": {
+                                                                    "line": 49,
+                                                                    "column": 46
+                                                                },
+                                                                "end": {
+                                                                    "line": 53,
+                                                                    "column": 5
+                                                                }
+                                                            }
+                                                        },
+                                                        "generator": false,
+                                                        "expression": false,
+                                                        "async": false,
+                                                        "loc": {
+                                                            "start": {
+                                                                "line": 49,
+                                                                "column": 34
+                                                            },
+                                                            "end": {
+                                                                "line": 53,
+                                                                "column": 5
+                                                            }
+                                                        }
+                                                    }
+                                                ],
+                                                "loc": {
+                                                    "start": {
+                                                        "line": 49,
+                                                        "column": 4
+                                                    },
+                                                    "end": {
+                                                        "line": 53,
+                                                        "column": 6
+                                                    }
+                                                }
+                                            },
+                                            "loc": {
+                                                "start": {
+                                                    "line": 49,
+                                                    "column": 4
+                                                },
+                                                "end": {
+                                                    "line": 53,
+                                                    "column": 7
+                                                }
+                                            }
                                         }
                                     ],
                                     "loc": {
@@ -1256,7 +1441,7 @@
                                             "column": 36
                                         },
                                         "end": {
-                                            "line": 49,
+                                            "line": 55,
                                             "column": 1
                                         }
                                     }
@@ -1270,7 +1455,7 @@
                                         "column": 24
                                     },
                                     "end": {
-                                        "line": 49,
+                                        "line": 55,
                                         "column": 1
                                     }
                                 }
@@ -1282,7 +1467,7 @@
                                 "column": 0
                             },
                             "end": {
-                                "line": 49,
+                                "line": 55,
                                 "column": 2
                             }
                         }
@@ -1293,7 +1478,7 @@
                             "column": 0
                         },
                         "end": {
-                            "line": 49,
+                            "line": 55,
                             "column": 3
                         }
                     }
@@ -1306,7 +1491,7 @@
                     "column": 0
                 },
                 "end": {
-                    "line": 49,
+                    "line": 55,
                     "column": 3
                 }
             }

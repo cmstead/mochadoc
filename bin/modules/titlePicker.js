@@ -31,8 +31,10 @@ function titlePicker(
         return isFunctionCall(node) && getExpressionName(node) === 'only';
     }
 
-    function isDescribeCall(node) {
-        return isFunctionCall(node) && getExpressionName(node) === 'describe';
+    function isSuiteCall(node) {
+        return isFunctionCall(node)
+            && (getExpressionName(node) === 'describe'
+                || getExpressionName(node) === 'suite');
     }
 
     function isTestCall(node) {
@@ -43,7 +45,7 @@ function titlePicker(
 
     const isTestMethodCall =
         (node) => {
-            return isTestCall(node) || isDescribeCall(node);
+            return isTestCall(node) || isSuiteCall(node);
         }
 
     function addChildArray(currentScope) {

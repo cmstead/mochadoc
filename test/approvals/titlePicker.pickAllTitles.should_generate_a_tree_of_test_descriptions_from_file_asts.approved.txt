@@ -70,6 +70,20 @@
                                 "testBody": "() => {\n\n        }"
                             }
                         ]
+                    },
+                    {
+                        "description": "This is a test suite",
+                        "file": "./test/fixtures/test-fixture.2.test.js",
+                        "methodType": "suite",
+                        "testBody": "",
+                        "children": [
+                            {
+                                "description": "this is a tdd test",
+                                "file": "./test/fixtures/test-fixture.2.test.js",
+                                "methodType": "test",
+                                "testBody": "() => {\n            // other stuff\n        }"
+                            }
+                        ]
                     }
                 ]
             }

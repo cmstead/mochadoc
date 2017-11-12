@@ -46,4 +46,10 @@ describe('TestFixture', function () {
         });
     });
 
+    suite('This is a test suite', function () {
+        test('this is a tdd test', () => {
+            // other stuff
+        });
+    });
+
 });

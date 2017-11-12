@@ -1,7 +1,7 @@
 Mochadoc
 ========
 
-The dead simple way to create docs from Mocha BDD, Jasmine and Jest tests.
+The dead simple way to create docs from Mocha BDD & TDD, Jasmine and Jest tests.
 
 ## Setup ##
 
@@ -67,8 +67,8 @@ __Synopsis__
 Examples of use:
 
 ```bash
-$ mochadoc --help
 $ mochadoc --init
+$ mochadoc --help
 $ mochadoc [--silent] [--json] [--config path/to/file]
 ```
 
@@ -84,6 +84,11 @@ __Options__
 | -s, --silent | | Turns off all logging |
 
 ## Changelog ##
+
+**v0.8.0**
+
+- Refactored code for maintenance ease
+- Updated test capture code to capture Mocha TDD test suites
 
 **v0.7.0**
 
