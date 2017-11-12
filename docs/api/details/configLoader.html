@@ -25,8 +25,11 @@
         <strong>should load a config file from a user-defined path</strong>
     </li>
     <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
-    <li>
-        <pre>
+    <li class="code-sample-wrapper">
+        <div class="code-expand">
+            <a href="#"></a>
+        </div>
+        <pre class="code-sample">
             <code>
         function () {
             const filePath &#x3D; &#x27;./test/mochadocConfig.json&#x27;
@@ -44,8 +47,11 @@
         <strong>should load a config file from .mochadocrc when no file is specified</strong>
     </li>
     <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
-    <li>
-        <pre>
+    <li class="code-sample-wrapper">
+        <div class="code-expand">
+            <a href="#"></a>
+        </div>
+        <pre class="code-sample">
             <code>
         function () {
             const result &#x3D; configLoader.loadConfig(null, childContainer);
@@ -62,8 +68,11 @@
         <strong>should load a config file from package.json when no file is specified and .mochadocrc is missing</strong>
     </li>
     <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
-    <li>
-        <pre>
+    <li class="code-sample-wrapper">
+        <div class="code-expand">
+            <a href="#"></a>
+        </div>
+        <pre class="code-sample">
             <code>
         function () {
             const configResult &#x3D; fileResult.result;
@@ -87,8 +96,11 @@
         <strong>should throw an error when config is malformed</strong>
     </li>
     <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
-    <li>
-        <pre>
+    <li class="code-sample-wrapper">
+        <div class="code-expand">
+            <a href="#"></a>
+        </div>
+        <pre class="code-sample">
             <code>
         function () {
             fileResult.result &#x3D; { foo: &#x27;bar&#x27; };
@@ -104,8 +116,11 @@
         <strong>should throw an error when config in package.json is missing</strong>
     </li>
     <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
-    <li>
-        <pre>
+    <li class="code-sample-wrapper">
+        <div class="code-expand">
+            <a href="#"></a>
+        </div>
+        <pre class="code-sample">
             <code>
         function () {
             fileHelperMethods.isFile &#x3D; (path) &#x3D;&gt; path !&#x3D;&#x3D; &#x27;./.mochadocrc&#x27;;
@@ -122,8 +137,11 @@
         <strong>should throw an error if no configuration file is found</strong>
     </li>
     <li>File location: <span class="filename">./test/configLoader.test.js</span></li>
-    <li>
-        <pre>
+    <li class="code-sample-wrapper">
+        <div class="code-expand">
+            <a href="#"></a>
+        </div>
+        <pre class="code-sample">
             <code>
         function () {
             fileHelperMethods.isFile &#x3D; () &#x3D;&gt; false;
@@ -139,6 +157,7 @@
 </ul>
     </div>
 
+    <script src="../assets/code-collapse.js"></script>
     <script src="../assets/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </body>

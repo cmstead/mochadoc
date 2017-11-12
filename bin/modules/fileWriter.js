@@ -66,7 +66,8 @@ function fileWriter(config) {
         const docAssets = [
             'doc-style.css',
             'github-gist.css',
-            'highlight.pack.js'
+            'highlight.pack.js',
+            'code-collapse.js'
         ];
 
         docAssets.forEach(copyFile(dest));
