@@ -89,6 +89,10 @@ __Options__
 
 ## Changelog ##
 
+**v0.9.0**
+
+- Added collapsible describe content
+
 **v0.8.0**
 
 - Refactored code for maintenance ease
