@@ -3,6 +3,10 @@ Mochadoc
 
 The dead simple way to create docs from Mocha BDD & TDD, Jasmine and Jest tests.
 
+Find me online:
+- [@cm_stead](https://twitter.com/cm_stead)
+- [ChrisStead.com](http://www.chrisstead.com)
+
 ## Setup ##
 
 First install Mochadoc globally from NPM:
