@@ -21,9 +21,9 @@ templates['core'] = template({"compiler":[7,">= 4.0.0"],"main":function(containe
 templates['describeItem'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function";
 
-  return "<li>\r\n    <h3>"
+  return "<li class=\"describe-item\">\r\n    <h3>"
     + container.escapeExpression(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n    <ul>\r\n        "
+    + "</h3>\r\n    <div><a href=\"#\" class=\"describe-link\"></a></div>\r\n    <ul class=\"describe-collapsible shown\">\r\n        "
     + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n    </ul>\r\n</li>";
 },"useData":true});
@@ -41,7 +41,7 @@ templates['describePage'] = template({"compiler":[7,">= 4.0.0"],"main":function(
 
   return "<h1>"
     + container.escapeExpression(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</h1>\r\n\r\n<ul>\r\n    "
+    + "</h1>\r\n<div>\r\n    <a href=\"#\" class=\"collapse-all\">Collapse All</a>\r\n</div>\r\n<ul>\r\n    "
     + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n</ul>";
 },"useData":true});
