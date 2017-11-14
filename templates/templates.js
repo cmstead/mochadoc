@@ -25,7 +25,7 @@ templates['describeItem'] = template({"compiler":[7,">= 4.0.0"],"main":function(
 
   return "<li class=\"describe-item\">\r\n    <h3>"
     + container.escapeExpression(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n    <div><a href=\"#\" class=\"describe-link\"></a></div>\r\n    <ul class=\"describe-collapsible shown\">\r\n        "
+    + "</h3>\r\n    <div><a href=\"#\" class=\"describe-link collapse-link\"></a></div>\r\n    <ul class=\"describe-collapsible shown\">\r\n        "
     + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n    </ul>\r\n</li>";
 },"useData":true});
@@ -43,7 +43,7 @@ templates['describePage'] = template({"compiler":[7,">= 4.0.0"],"main":function(
 
   return "<h1>"
     + container.escapeExpression(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</h1>\r\n<div>\r\n    <a href=\"#\" class=\"collapse-all\">Collapse All</a>\r\n</div>\r\n<ul>\r\n    "
+    + "</h1>\r\n<div>\r\n    <a href=\"#\" class=\"collapse-all collapse-link\">Collapse All</a>\r\n</div>\r\n<ul>\r\n    "
     + ((stack1 = ((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n</ul>";
 },"useData":true});
@@ -54,7 +54,7 @@ templates['testItem'] = template({"compiler":[7,">= 4.0.0"],"main":function(cont
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
     + "</strong>\r\n    </li>\r\n    <li>File location: <span class=\"filename\">"
     + alias4(((helper = (helper = helpers.file || (depth0 != null ? depth0.file : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"file","hash":{},"data":data}) : helper)))
-    + "</span></li>\r\n    <li class=\"code-sample-wrapper\">\r\n        <div class=\"code-expand\">\r\n            <a href=\"#\"></a>\r\n        </div>\r\n        <pre class=\"code-sample\">\r\n            <code>\r\n        "
+    + "</span></li>\r\n    <li class=\"code-sample-wrapper\">\r\n        <div class=\"code-expand\">\r\n            <a href=\"#\" class=\"collapse-link\"></a>\r\n        </div>\r\n        <pre class=\"code-sample\">\r\n            <code>\r\n        "
     + alias4(((helper = (helper = helpers.testBody || (depth0 != null ? depth0.testBody : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"testBody","hash":{},"data":data}) : helper)))
     + "\r\n            </code>\r\n        </pre>\r\n    </li>\r\n</ul>";
 },"useData":true});
