@@ -2,7 +2,9 @@ var Handlebars = require("handlebars/runtime");  var template = Handlebars.templ
 templates['core'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<html>\r\n\r\n<head>\r\n    <title>Mochadoc Test Documentation</title>\r\n\r\n    <link rel=\"stylesheet\" href=\""
+  return "<html>\r\n\r\n<head>\r\n    <title>"
+    + alias4(((helper = (helper = helpers.projectName || (depth0 != null ? depth0.projectName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectName","hash":{},"data":data}) : helper)))
+    + " -- Mochadoc Test Documentation</title>\r\n\r\n    <link rel=\"stylesheet\" href=\""
     + alias4(((helper = (helper = helpers.fileRoot || (depth0 != null ? depth0.fileRoot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileRoot","hash":{},"data":data}) : helper)))
     + "assets/doc-style.css\" media=\"screen\">\r\n    <link rel=\"stylesheet\" href=\""
     + alias4(((helper = (helper = helpers.fileRoot || (depth0 != null ? depth0.fileRoot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileRoot","hash":{},"data":data}) : helper)))
